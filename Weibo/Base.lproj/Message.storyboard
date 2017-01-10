@@ -7,7 +7,7 @@
         <!--Root View Controller-->
         <scene sceneID="qWt-rm-j68">
             <objects>
-                <tableViewController id="ARg-Z4-Zx7" sceneMemberID="viewController">
+                <tableViewController id="ARg-Z4-Zx7" customClass="MessageViewController" customModule="Weibo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fZ5-VC-J2L">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

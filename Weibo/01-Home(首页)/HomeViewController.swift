@@ -9,6 +9,10 @@
 import UIKit
 
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        visitorView.addRotateAnim()
+    }
 }

@@ -28,7 +28,7 @@ class MainTabViewController: UITabBarController {
         
         composeBtn.center = CGPointMake(tabBar.center.x, tabBar.bounds.size.height * 0.5)
         
-        composeBtn.addTarget(self, action: Selector("composeBtnDidTouch"), forControlEvents: .TouchUpInside)
+        composeBtn.addTarget(self, action: #selector(MainTabViewController.composeBtnDidTouch), forControlEvents: .TouchUpInside)
 
     }
 
