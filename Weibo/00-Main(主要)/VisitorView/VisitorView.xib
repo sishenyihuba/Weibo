@@ -102,6 +102,8 @@
             </variation>
             <connections>
                 <outlet property="iconImageView" destination="gZy-Ba-6he" id="3Jx-Wh-xXc"/>
+                <outlet property="loginBtn" destination="qPh-yg-ic6" id="qRL-tt-519"/>
+                <outlet property="registerBtn" destination="8XN-7P-7oB" id="UK8-Ar-Gyp"/>
                 <outlet property="rotateImageView" destination="4KR-pM-0XO" id="qvk-Mq-mzE"/>
                 <outlet property="titleLabel" destination="YLF-lo-WQj" id="2es-ck-dcO"/>
             </connections>

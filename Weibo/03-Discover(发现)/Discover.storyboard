@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--广场-->
         <scene sceneID="giM-mG-0B0">
             <objects>
                 <tableViewController id="Lbk-bS-TdJ" customClass="DiscoverViewController" customModule="Weibo" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,7 +27,7 @@
                             <outlet property="delegate" destination="Lbk-bS-TdJ" id="Oue-PM-egh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="qTS-tz-jd5"/>
+                    <navigationItem key="navigationItem" title="广场" id="qTS-tz-jd5"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJG-Qw-XBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

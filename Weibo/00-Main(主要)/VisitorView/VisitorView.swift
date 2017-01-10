@@ -14,6 +14,8 @@ class VisitorView: UIView {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var loginBtn: UIButton!
     class func createVisitorView() -> VisitorView {
         return NSBundle.mainBundle().loadNibNamed("VisitorView", owner: nil, options: nil).first as! VisitorView
     }

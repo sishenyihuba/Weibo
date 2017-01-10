@@ -10,14 +10,25 @@ import UIKit
 
 class BaseViewController: UITableViewController {
 
-    var isLogin:Bool = false
+    var isLogin:Bool = true
     
     //MARK: - lazy loading
     var visitorView:VisitorView = VisitorView.createVisitorView()
     
-    
+    //MARK: - 周期方法
     override func loadView() {
         isLogin ? super.loadView() : loadVisitorView()
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupNavigationItems()
+        
+        visitorView.registerBtn.addTarget(self, action: #selector(BaseViewController.registerDidTouch), forControlEvents: .TouchUpInside)
+        
+        visitorView.loginBtn.addTarget(self, action: #selector(BaseViewController.loginDidTouch), forControlEvents: .TouchUpInside)
     }
 
 }
@@ -26,5 +37,27 @@ class BaseViewController: UITableViewController {
 extension BaseViewController {
     private func loadVisitorView() {
         view = visitorView
+    }
+}
+
+//MARK: - 设置导航栏
+extension BaseViewController {
+    private func setupNavigationItems() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .Plain, target: self, action: #selector(BaseViewController.registerDidTouch))
+        
+        navigationItem.rightBarButtonItem   = UIBarButtonItem(title: "登陆", style: .Plain, target: self, action: #selector(BaseViewController.loginDidTouch))
+    }
+}
+
+//MARK: - 点击事件
+extension BaseViewController{
+    @objc private func registerDidTouch() {
+        print("registerDidTouch")
+    }
+    
+    
+    @objc private func loginDidTouch() {
+        print("loginDidTouch")
+
     }
 }
