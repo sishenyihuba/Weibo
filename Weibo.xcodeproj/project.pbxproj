@@ -21,12 +21,13 @@
 		A66609B81E238F70000C8897 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66609B71E238F70000C8897 /* BaseViewController.swift */; };
 		A66609BB1E2390C0000C8897 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66609BA1E2390C0000C8897 /* VisitorView.swift */; };
 		A66609BD1E2390D3000C8897 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A66609BC1E2390D3000C8897 /* VisitorView.xib */; };
+		A66E56FD1E26165C00F4CDFA /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E56F71E26165C00F4CDFA /* UIBarButtonItem+Extension.swift */; };
+		A66E56FE1E26165C00F4CDFA /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E56FA1E26165C00F4CDFA /* TitleButton.swift */; };
+		A66E56FF1E26165C00F4CDFA /* ZWCustomPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A66E56FC1E26165C00F4CDFA /* ZWCustomPopView.m */; };
+		A66E57011E26168F00F4CDFA /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E57001E26168F00F4CDFA /* NetworkUtils.swift */; };
 		A6B06DCB1E214E5B003D2501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B06DCA1E214E5B003D2501 /* AppDelegate.swift */; };
 		A6B06DD01E214E5B003D2501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B06DCE1E214E5B003D2501 /* Main.storyboard */; };
 		A6B06DD21E214E5B003D2501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B06DD11E214E5B003D2501 /* Assets.xcassets */; };
-		A6F2B7471E24BC6F0044D768 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F2B7461E24BC6F0044D768 /* UIBarButtonItem+Extension.swift */; };
-		A6F2B74A1E24C6CC0044D768 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F2B7491E24C6CC0044D768 /* TitleButton.swift */; };
-		A6F2B74E1E24E5300044D768 /* ZWCustomPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F2B74D1E24E5300044D768 /* ZWCustomPopView.m */; };
 		CCD7678545C364950CDAEE4F /* Pods_Weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED7E4A686449A76F50CF277 /* Pods_Weibo.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,16 +47,17 @@
 		A66609B71E238F70000C8897 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A66609BA1E2390C0000C8897 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		A66609BC1E2390D3000C8897 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		A66E56F71E26165C00F4CDFA /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		A66E56FA1E26165C00F4CDFA /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		A66E56FB1E26165C00F4CDFA /* ZWCustomPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWCustomPopView.h; sourceTree = "<group>"; };
+		A66E56FC1E26165C00F4CDFA /* ZWCustomPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWCustomPopView.m; sourceTree = "<group>"; };
+		A66E57001E26168F00F4CDFA /* NetworkUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		A6B06DC71E214E5B003D2501 /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B06DCA1E214E5B003D2501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6B06DCF1E214E5B003D2501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6B06DD11E214E5B003D2501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6B06DD61E214E5B003D2501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6F2B7461E24BC6F0044D768 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
-		A6F2B7491E24C6CC0044D768 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
-		A6F2B74C1E24E5300044D768 /* ZWCustomPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWCustomPopView.h; sourceTree = "<group>"; };
-		A6F2B74D1E24E5300044D768 /* ZWCustomPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWCustomPopView.m; sourceTree = "<group>"; };
-		A6F2B74F1E25CB200044D768 /* Weibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridging-Header.h"; sourceTree = "<group>"; };
+		A6F2B7501E2615F80044D768 /* Weibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridging-Header.h"; sourceTree = "<group>"; };
 		C33CC6E30CC9D9278D252AF9 /* Pods-Weibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weibo/Pods-Weibo.debug.xcconfig"; sourceTree = "<group>"; };
 		FED7E4A686449A76F50CF277 /* Pods_Weibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -115,6 +117,35 @@
 			path = VisitorView;
 			sourceTree = "<group>";
 		};
+		A66E56F61E26165C00F4CDFA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A66E56F71E26165C00F4CDFA /* UIBarButtonItem+Extension.swift */,
+			);
+			name = Extension;
+			path = "Weibo/05-Tools/Extension";
+			sourceTree = SOURCE_ROOT;
+		};
+		A66E56F81E26165C00F4CDFA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A66E57001E26168F00F4CDFA /* NetworkUtils.swift */,
+			);
+			name = Utils;
+			path = "Weibo/05-Tools/Utils";
+			sourceTree = SOURCE_ROOT;
+		};
+		A66E56F91E26165C00F4CDFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A66E56FA1E26165C00F4CDFA /* TitleButton.swift */,
+				A66E56FB1E26165C00F4CDFA /* ZWCustomPopView.h */,
+				A66E56FC1E26165C00F4CDFA /* ZWCustomPopView.m */,
+			);
+			name = View;
+			path = "Weibo/05-Tools/View";
+			sourceTree = SOURCE_ROOT;
+		};
 		A6B06DBE1E214E5B003D2501 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +174,7 @@
 				A6B06DE01E214F93003D2501 /* 04-Me(我) */,
 				A6F2B7441E24BC510044D768 /* 05-Tools */,
 				A6B06DCA1E214E5B003D2501 /* AppDelegate.swift */,
+				A6F2B7501E2615F80044D768 /* Weibo-Bridging-Header.h */,
 				A6B06DCE1E214E5B003D2501 /* Main.storyboard */,
 				A6B06DD11E214E5B003D2501 /* Assets.xcassets */,
 				A6B06DD61E214E5B003D2501 /* Info.plist */,
@@ -200,30 +232,12 @@
 		A6F2B7441E24BC510044D768 /* 05-Tools */ = {
 			isa = PBXGroup;
 			children = (
-				A6F2B74F1E25CB200044D768 /* Weibo-Bridging-Header.h */,
-				A6F2B7481E24C63B0044D768 /* View */,
-				A6F2B7451E24BC510044D768 /* Extension */,
+				A66E56F61E26165C00F4CDFA /* Extension */,
+				A66E56F81E26165C00F4CDFA /* Utils */,
+				A66E56F91E26165C00F4CDFA /* View */,
 			);
 			name = "05-Tools";
 			path = "04-Me(我)/05-Tools";
-			sourceTree = "<group>";
-		};
-		A6F2B7451E24BC510044D768 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				A6F2B7461E24BC6F0044D768 /* UIBarButtonItem+Extension.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		A6F2B7481E24C63B0044D768 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A6F2B74C1E24E5300044D768 /* ZWCustomPopView.h */,
-				A6F2B74D1E24E5300044D768 /* ZWCustomPopView.m */,
-				A6F2B7491E24C6CC0044D768 /* TitleButton.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,12 +373,13 @@
 				A6B06DCB1E214E5B003D2501 /* AppDelegate.swift in Sources */,
 				A666099A1E231EC9000C8897 /* MainTabViewController.swift in Sources */,
 				A66609A11E231FF1000C8897 /* MessageViewController.swift in Sources */,
-				A6F2B74E1E24E5300044D768 /* ZWCustomPopView.m in Sources */,
+				A66E57011E26168F00F4CDFA /* NetworkUtils.swift in Sources */,
+				A66E56FF1E26165C00F4CDFA /* ZWCustomPopView.m in Sources */,
 				A666099F1E231FE3000C8897 /* HomeViewController.swift in Sources */,
 				A66609B81E238F70000C8897 /* BaseViewController.swift in Sources */,
 				A66609A31E231FFE000C8897 /* DiscoverViewController.swift in Sources */,
-				A6F2B7471E24BC6F0044D768 /* UIBarButtonItem+Extension.swift in Sources */,
-				A6F2B74A1E24C6CC0044D768 /* TitleButton.swift in Sources */,
+				A66E56FD1E26165C00F4CDFA /* UIBarButtonItem+Extension.swift in Sources */,
+				A66E56FE1E26165C00F4CDFA /* TitleButton.swift in Sources */,
 				A66609BB1E2390C0000C8897 /* VisitorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

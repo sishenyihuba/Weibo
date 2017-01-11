@@ -26,6 +26,15 @@ class HomeViewController: BaseViewController {
         setupHomeNavi()
         
         setupTitleBarItem()
+        
+        NetworkUtils.sharedInstance.request(.POST, urlString: "http://httpbin.org/post", parameters: ["name" : "json"]) { (result, error) in
+            if error != nil {
+                print(error)
+                return
+            }
+            
+            
+        }
     }
     
 }
