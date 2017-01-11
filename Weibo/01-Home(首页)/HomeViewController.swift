@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class HomeViewController: BaseViewController {
 
     
@@ -50,11 +49,12 @@ extension HomeViewController {
     @objc private func titleBtnDidTouch(sender:TitleButton) {
         titleBtn.selected = !titleBtn.selected
 
-        let popMenu = ZWCustomPopView(bounds: CGRectMake(0, 0, 120, 44 * CGFloat(popMenuArray.count)), titleMenus: popMenuArray , maskAlpha: 0.0)
+        let popMenu = ZWCustomPopView(bounds: CGRectMake(0, 0, 160, 44 * CGFloat(popMenuArray.count)), titleMenus: popMenuArray , maskAlpha: 0.0)
         popMenu.delegate = self
-        popMenu.containerBackgroudColor = UIColor.init(red: 0, green: 100.0/255.0, blue: 14.0/255.0, alpha: 1.0)
-        popMenu.showFrom(sender, alignStyle: .Right)
-
+        popMenu.containerBackgroudColor = UIColor.init(red: 68.0/255.0, green: 77.0/255.0, blue: 86.0/255.0, alpha: 1.0)
+        
+        popMenu.showFrom(sender, alignStyle: .Center)
+        
     }
 }
 

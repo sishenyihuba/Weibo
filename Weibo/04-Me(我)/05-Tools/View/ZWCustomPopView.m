@@ -314,10 +314,12 @@
     if (nil == cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.contentView.backgroundColor = [UIColor clearColor];
+        cell.contentView.backgroundColor = [UIColor colorWithRed:68.0/255.0 green:77.0/255.0 blue:86.0/255.0 alpha:1.0];
+        
+        
     }
     cell.textLabel.text = self.titleMenus[indexPath.row];
-    //    cell.textLabel.textColor = [UIColor whiteColor];
+        cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.font = [UIFont systemFontOfSize:17.0];
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     return cell;
