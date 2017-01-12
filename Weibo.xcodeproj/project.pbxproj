@@ -24,7 +24,11 @@
 		A66E56FD1E26165C00F4CDFA /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E56F71E26165C00F4CDFA /* UIBarButtonItem+Extension.swift */; };
 		A66E56FE1E26165C00F4CDFA /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E56FA1E26165C00F4CDFA /* TitleButton.swift */; };
 		A66E56FF1E26165C00F4CDFA /* ZWCustomPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A66E56FC1E26165C00F4CDFA /* ZWCustomPopView.m */; };
-		A66E57011E26168F00F4CDFA /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E57001E26168F00F4CDFA /* NetworkUtils.swift */; };
+		A66E57061E2627D800F4CDFA /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E57051E2627D800F4CDFA /* OAuthViewController.swift */; };
+		A66E57081E2627E400F4CDFA /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A66E57071E2627E400F4CDFA /* OAuthViewController.xib */; };
+		A66E570B1E262A3600F4CDFA /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E570A1E262A3600F4CDFA /* Global.swift */; };
+		A66E570D1E275C7A00F4CDFA /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E570C1E275C7A00F4CDFA /* UserAccount.swift */; };
+		A66E570F1E2772C500F4CDFA /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E570E1E2772C500F4CDFA /* NetworkTools.swift */; };
 		A6B06DCB1E214E5B003D2501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B06DCA1E214E5B003D2501 /* AppDelegate.swift */; };
 		A6B06DD01E214E5B003D2501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B06DCE1E214E5B003D2501 /* Main.storyboard */; };
 		A6B06DD21E214E5B003D2501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B06DD11E214E5B003D2501 /* Assets.xcassets */; };
@@ -51,7 +55,11 @@
 		A66E56FA1E26165C00F4CDFA /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		A66E56FB1E26165C00F4CDFA /* ZWCustomPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWCustomPopView.h; sourceTree = "<group>"; };
 		A66E56FC1E26165C00F4CDFA /* ZWCustomPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWCustomPopView.m; sourceTree = "<group>"; };
-		A66E57001E26168F00F4CDFA /* NetworkUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
+		A66E57051E2627D800F4CDFA /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		A66E57071E2627E400F4CDFA /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
+		A66E570A1E262A3600F4CDFA /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		A66E570C1E275C7A00F4CDFA /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		A66E570E1E2772C500F4CDFA /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		A6B06DC71E214E5B003D2501 /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B06DCA1E214E5B003D2501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6B06DCF1E214E5B003D2501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -129,7 +137,7 @@
 		A66E56F81E26165C00F4CDFA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				A66E57001E26168F00F4CDFA /* NetworkUtils.swift */,
+				A66E570E1E2772C500F4CDFA /* NetworkTools.swift */,
 			);
 			name = Utils;
 			path = "Weibo/05-Tools/Utils";
@@ -144,6 +152,25 @@
 			);
 			name = View;
 			path = "Weibo/05-Tools/View";
+			sourceTree = SOURCE_ROOT;
+		};
+		A66E57021E2627B100F4CDFA /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				A66E57051E2627D800F4CDFA /* OAuthViewController.swift */,
+				A66E57071E2627E400F4CDFA /* OAuthViewController.xib */,
+				A66E570C1E275C7A00F4CDFA /* UserAccount.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		A66E57091E262A2800F4CDFA /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				A66E570A1E262A3600F4CDFA /* Global.swift */,
+			);
+			name = Global;
+			path = "Weibo/05-Tools/Global";
 			sourceTree = SOURCE_ROOT;
 		};
 		A6B06DBE1E214E5B003D2501 = {
@@ -185,6 +212,7 @@
 		A6B06DDC1E214F93003D2501 /* 00-Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				A66E57021E2627B100F4CDFA /* OAuth */,
 				A66609B91E2390AE000C8897 /* VisitorView */,
 				A66609B61E238F58000C8897 /* Base */,
 				A666099B1E231FBF000C8897 /* Resource */,
@@ -232,6 +260,7 @@
 		A6F2B7441E24BC510044D768 /* 05-Tools */ = {
 			isa = PBXGroup;
 			children = (
+				A66E57091E262A2800F4CDFA /* Global */,
 				A66E56F61E26165C00F4CDFA /* Extension */,
 				A66E56F81E26165C00F4CDFA /* Utils */,
 				A66E56F91E26165C00F4CDFA /* View */,
@@ -302,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A66E57081E2627E400F4CDFA /* OAuthViewController.xib in Resources */,
 				A66609B31E2387FD000C8897 /* Null.storyboard in Resources */,
 				A66609B51E238807000C8897 /* Discover.storyboard in Resources */,
 				A6B06DD21E214E5B003D2501 /* Assets.xcassets in Resources */,
@@ -371,16 +401,19 @@
 			files = (
 				A66609A51E232008000C8897 /* MeViewController.swift in Sources */,
 				A6B06DCB1E214E5B003D2501 /* AppDelegate.swift in Sources */,
+				A66E570F1E2772C500F4CDFA /* NetworkTools.swift in Sources */,
 				A666099A1E231EC9000C8897 /* MainTabViewController.swift in Sources */,
 				A66609A11E231FF1000C8897 /* MessageViewController.swift in Sources */,
-				A66E57011E26168F00F4CDFA /* NetworkUtils.swift in Sources */,
 				A66E56FF1E26165C00F4CDFA /* ZWCustomPopView.m in Sources */,
+				A66E570B1E262A3600F4CDFA /* Global.swift in Sources */,
 				A666099F1E231FE3000C8897 /* HomeViewController.swift in Sources */,
 				A66609B81E238F70000C8897 /* BaseViewController.swift in Sources */,
 				A66609A31E231FFE000C8897 /* DiscoverViewController.swift in Sources */,
 				A66E56FD1E26165C00F4CDFA /* UIBarButtonItem+Extension.swift in Sources */,
+				A66E57061E2627D800F4CDFA /* OAuthViewController.swift in Sources */,
 				A66E56FE1E26165C00F4CDFA /* TitleButton.swift in Sources */,
 				A66609BB1E2390C0000C8897 /* VisitorView.swift in Sources */,
+				A66E570D1E275C7A00F4CDFA /* UserAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

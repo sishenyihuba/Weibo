@@ -10,7 +10,7 @@ import UIKit
 
 class BaseViewController: UITableViewController {
 
-    var isLogin:Bool = true
+    var isLogin:Bool = false
     
     //MARK: - lazy loading
     var visitorView:VisitorView = VisitorView.createVisitorView()
@@ -57,7 +57,12 @@ extension BaseViewController{
     
     
     @objc private func loginDidTouch() {
-        print("loginDidTouch")
-
+        //开始授权登陆
+        let oAuthVC = OAuthViewController()
+        
+        let navi = UINavigationController(rootViewController: oAuthVC)
+        
+        presentViewController(navi, animated: true, completion: nil)
+        
     }
 }

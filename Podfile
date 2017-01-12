@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'Weibo' do
   pod 'AFNetworking'
+  pod 'SVProgressHUD'
 end

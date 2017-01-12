@@ -27,17 +27,8 @@ class HomeViewController: BaseViewController {
         
         setupTitleBarItem()
         
-        NetworkUtils.sharedInstance.request(.POST, urlString: "http://httpbin.org/post", parameters: ["name" : "json"]) { (result, error) in
-            if error != nil {
-                print(error)
-                return
-            }
-            
-            
         }
     }
-    
-}
 
 //MARK: - 设置Home界面的Bar
 extension HomeViewController {
