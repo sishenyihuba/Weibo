@@ -1,3 +1,4 @@
+
 //
 //  AppDelegate.swift
 //  Weibo
@@ -18,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UINavigationBar.appearance().tintColor = UIColor.orangeColor()
         UITabBar.appearance().tintColor = UIColor.orangeColor()
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.makeKeyAndVisible()
+        
+        let isLogin  = UserAccountViewModel.sharedInstance.isLogin
+        let defaultVC = isLogin ? WelcomeViewController() : UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
+        window?.rootViewController = defaultVC
         return true
     }
 

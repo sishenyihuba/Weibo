@@ -29,14 +29,18 @@
 		A66E570B1E262A3600F4CDFA /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E570A1E262A3600F4CDFA /* Global.swift */; };
 		A66E570D1E275C7A00F4CDFA /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E570C1E275C7A00F4CDFA /* UserAccount.swift */; };
 		A66E570F1E2772C500F4CDFA /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E570E1E2772C500F4CDFA /* NetworkTools.swift */; };
+		A69A6FF01E2D1BE300D0C7DD /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69A6FEF1E2D1BE300D0C7DD /* UserAccountViewModel.swift */; };
+		A69A6FF41E2D1E7D00D0C7DD /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69A6FF21E2D1E7D00D0C7DD /* WelcomeViewController.swift */; };
+		A69A6FF51E2D1E7D00D0C7DD /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A69A6FF31E2D1E7D00D0C7DD /* WelcomeViewController.xib */; };
 		A6B06DCB1E214E5B003D2501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B06DCA1E214E5B003D2501 /* AppDelegate.swift */; };
 		A6B06DD01E214E5B003D2501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B06DCE1E214E5B003D2501 /* Main.storyboard */; };
 		A6B06DD21E214E5B003D2501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B06DD11E214E5B003D2501 /* Assets.xcassets */; };
-		CCD7678545C364950CDAEE4F /* Pods_Weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED7E4A686449A76F50CF277 /* Pods_Weibo.framework */; };
+		A79CE81C5B7474834A7F231F /* Pods_Weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F894D4662A720F37B41663E /* Pods_Weibo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		926ED07EE8870439B5F45E93 /* Pods-Weibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weibo/Pods-Weibo.release.xcconfig"; sourceTree = "<group>"; };
+		9F894D4662A720F37B41663E /* Pods_Weibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66609991E231EC9000C8897 /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		A666099C1E231FBF000C8897 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		A666099E1E231FE3000C8897 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,9 @@
 		A66E570A1E262A3600F4CDFA /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		A66E570C1E275C7A00F4CDFA /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		A66E570E1E2772C500F4CDFA /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		A69A6FEF1E2D1BE300D0C7DD /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		A69A6FF21E2D1E7D00D0C7DD /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		A69A6FF31E2D1E7D00D0C7DD /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		A6B06DC71E214E5B003D2501 /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B06DCA1E214E5B003D2501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6B06DCF1E214E5B003D2501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,7 +74,6 @@
 		A6B06DD61E214E5B003D2501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6F2B7501E2615F80044D768 /* Weibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridging-Header.h"; sourceTree = "<group>"; };
 		C33CC6E30CC9D9278D252AF9 /* Pods-Weibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weibo/Pods-Weibo.debug.xcconfig"; sourceTree = "<group>"; };
-		FED7E4A686449A76F50CF277 /* Pods_Weibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCD7678545C364950CDAEE4F /* Pods_Weibo.framework in Frameworks */,
+				A79CE81C5B7474834A7F231F /* Pods_Weibo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +91,7 @@
 		0ED765CDD5334276921650CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FED7E4A686449A76F50CF277 /* Pods_Weibo.framework */,
+				9F894D4662A720F37B41663E /* Pods_Weibo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,6 +166,7 @@
 				A66E57051E2627D800F4CDFA /* OAuthViewController.swift */,
 				A66E57071E2627E400F4CDFA /* OAuthViewController.xib */,
 				A66E570C1E275C7A00F4CDFA /* UserAccount.swift */,
+				A69A6FEF1E2D1BE300D0C7DD /* UserAccountViewModel.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -172,6 +179,15 @@
 			name = Global;
 			path = "Weibo/05-Tools/Global";
 			sourceTree = SOURCE_ROOT;
+		};
+		A69A6FF11E2D1E6700D0C7DD /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				A69A6FF21E2D1E7D00D0C7DD /* WelcomeViewController.swift */,
+				A69A6FF31E2D1E7D00D0C7DD /* WelcomeViewController.xib */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
 		};
 		A6B06DBE1E214E5B003D2501 = {
 			isa = PBXGroup;
@@ -212,6 +228,7 @@
 		A6B06DDC1E214F93003D2501 /* 00-Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				A69A6FF11E2D1E6700D0C7DD /* Welcome */,
 				A66E57021E2627B100F4CDFA /* OAuth */,
 				A66609B91E2390AE000C8897 /* VisitorView */,
 				A66609B61E238F58000C8897 /* Base */,
@@ -336,6 +353,7 @@
 				A66609B51E238807000C8897 /* Discover.storyboard in Resources */,
 				A6B06DD21E214E5B003D2501 /* Assets.xcassets in Resources */,
 				A6B06DD01E214E5B003D2501 /* Main.storyboard in Resources */,
+				A69A6FF51E2D1E7D00D0C7DD /* WelcomeViewController.xib in Resources */,
 				A66609AA1E235F73000C8897 /* Message.storyboard in Resources */,
 				A666099D1E231FBF000C8897 /* MainVCSettings.json in Resources */,
 				A66609A71E235F60000C8897 /* Home.storyboard in Resources */,
@@ -359,7 +377,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5E620530C5D8F8223ED5A589 /* [CP] Copy Pods Resources */ = {
@@ -404,6 +422,7 @@
 				A66E570F1E2772C500F4CDFA /* NetworkTools.swift in Sources */,
 				A666099A1E231EC9000C8897 /* MainTabViewController.swift in Sources */,
 				A66609A11E231FF1000C8897 /* MessageViewController.swift in Sources */,
+				A69A6FF41E2D1E7D00D0C7DD /* WelcomeViewController.swift in Sources */,
 				A66E56FF1E26165C00F4CDFA /* ZWCustomPopView.m in Sources */,
 				A66E570B1E262A3600F4CDFA /* Global.swift in Sources */,
 				A666099F1E231FE3000C8897 /* HomeViewController.swift in Sources */,
@@ -412,6 +431,7 @@
 				A66E56FD1E26165C00F4CDFA /* UIBarButtonItem+Extension.swift in Sources */,
 				A66E57061E2627D800F4CDFA /* OAuthViewController.swift in Sources */,
 				A66E56FE1E26165C00F4CDFA /* TitleButton.swift in Sources */,
+				A69A6FF01E2D1BE300D0C7DD /* UserAccountViewModel.swift in Sources */,
 				A66609BB1E2390C0000C8897 /* VisitorView.swift in Sources */,
 				A66E570D1E275C7A00F4CDFA /* UserAccount.swift in Sources */,
 			);
