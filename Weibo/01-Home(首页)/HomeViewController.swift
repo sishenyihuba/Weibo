@@ -14,7 +14,7 @@ class HomeViewController: BaseViewController {
     //MARK: - 懒加载 
     private lazy var titleBtn:TitleButton = TitleButton()
     private lazy var popMenuArray = ["iOS", "WatchOS","SiriKit","NotificationFW"]
-    
+    private lazy var viewModels :[StatusViewModel] = [StatusViewModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         visitorView.addRotateAnim()
@@ -26,6 +26,9 @@ class HomeViewController: BaseViewController {
         setupHomeNavi()
         
         setupTitleBarItem()
+        
+        loadStatuses()
+        
         
         }
     }
@@ -66,6 +69,40 @@ extension HomeViewController : ZWCustomPopViewDelegate {
     
     func popOverView(pView: ZWCustomPopView!, didClickMenuIndex index: Int) {
         print(index)
+    }
+}
+
+//MARK: - 加载微博数据
+extension HomeViewController {
+    func loadStatuses() {
+        NetworkTools.shareInstance.loadStatuses { (result, error) in
+            if error != nil {
+                return
+            }
+            guard let resultArray = result else {
+                return
+            }
+            
+            for item in resultArray {
+                let status = Status(dict: item)
+                self.viewModels.append(StatusViewModel(status: status))
+            }
+            self.tableView.reloadData()
+        }
+    }
+}
+
+
+extension HomeViewController {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModels.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell")!
+        let viewModel = viewModels[indexPath.row]
+        cell.textLabel?.text = viewModel.sourceText!
+        return cell
     }
 }
 

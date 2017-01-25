@@ -69,19 +69,6 @@ extension NetworkTools {
 
 // MARK:- 请求用户的信息
 extension NetworkTools {
-//    func loadUserInfo(access_token : String, uid : String, finished : (result : [String : AnyObject]?, error : NSError?) -> ()) {
-//        // 1.获取请求的URLString
-//        let urlString = "https://api.weibo.com/2/users/show.json"
-//        
-//        // 2.获取请求的参数
-//        let parameters = ["access_token" : access_token, "uid" : uid]
-//        
-//        // 3.发送网络请求
-//        request(.GET, urlString: urlString, parameters: parameters) { (result, error) -> () in
-//            finished(result: result as? [String : AnyObject] , error: error)
-//        }
-//    }
-    
     func loadUserInfo(userAccount:UserAccount,completionHandler:(result:[String:AnyObject]?,error:NSError?)->()) {
         guard let access_token = userAccount.access_token else {
             return
@@ -94,6 +81,20 @@ extension NetworkTools {
         
         request(.GET, urlString: "https://api.weibo.com/2/users/show.json", parameters: parameters) { (result, error) in
             completionHandler(result: result as? [String:AnyObject], error: error)
+        }
+    }
+}
+
+//MARK: - 请求微博数据
+extension NetworkTools {
+    func loadStatuses(completionHandler:(result:[[String:AnyObject]]?, error:NSError?)->()) {
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let parameters = ["access_token" : (UserAccountViewModel.sharedInstance.account?.access_token)!]
+        request(.GET, urlString: urlString, parameters: parameters) { (result, error) in
+            guard let resultDict = result as?  [String:AnyObject] else {
+                return
+            }
+            completionHandler(result: resultDict["statuses"] as? [[String:AnyObject]], error: error)
         }
     }
 }
