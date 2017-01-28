@@ -16,20 +16,23 @@ class HomeViewController: BaseViewController {
     private lazy var popMenuArray = ["iOS", "WatchOS","SiriKit","NotificationFW"]
     private lazy var viewModels :[StatusViewModel] = [StatusViewModel]()
     override func viewDidLoad() {
-        super.viewDidLoad()
-        visitorView.addRotateAnim()
+            super.viewDidLoad()
+            visitorView.addRotateAnim()
+            
+            if !isLogin {
+                return
+            }
+            
+            setupHomeNavi()
+            
+            setupTitleBarItem()
+            
+            loadStatuses()
         
-        if !isLogin {
-            return
-        }
+            tableView.estimatedRowHeight = 200
+            tableView.rowHeight = UITableViewAutomaticDimension
         
-        setupHomeNavi()
-        
-        setupTitleBarItem()
-        
-        loadStatuses()
-        
-        
+    
         }
     }
 
@@ -99,9 +102,9 @@ extension HomeViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as! StatusCell
         let viewModel = viewModels[indexPath.row]
-        cell.textLabel?.text = viewModel.sourceText!
+        cell.viewModel = viewModel
         return cell
     }
 }
