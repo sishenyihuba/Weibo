@@ -76,8 +76,18 @@ extension StatusCell {
             return CGSizeZero
         }
         
-        //4张配图
+        let flowLayout = picView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        if count == 1 {
+            let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(viewModel?.picURLs.last?.absoluteString)
+            flowLayout.itemSize = CGSizeMake(image.size.width * 2 , image.size.height * 2)
+            return CGSizeMake(image.size.width * 2 , image.size.height * 2)
+        }
+        
+        
         let itemWH = (UIScreen.mainScreen().bounds.width - 2 * margin - 2 * itemMargin) / 3
+        flowLayout.itemSize = CGSizeMake(itemWH, itemWH)
+        //4张配图
         if  count == 4 {
             let picViewWH = 2 * itemWH + itemMargin
             return CGSizeMake(picViewWH, picViewWH)

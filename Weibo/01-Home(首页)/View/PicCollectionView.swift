@@ -21,10 +21,6 @@ class PicCollectionView: UICollectionView {
         super.awakeFromNib()
         
         dataSource = self
-        
-        let flowLayout = self.collectionViewLayout as! UICollectionViewFlowLayout
-        let itemWH = (UIScreen.mainScreen().bounds.width - 2 * margin - 2 * itemMargin) / 3
-        flowLayout.itemSize = CGSizeMake(itemWH, itemWH)
     }
 
 }
