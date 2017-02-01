@@ -9,7 +9,8 @@
 import UIKit
 import SDWebImage
 
-let  margin : CGFloat = 15
+private let  margin : CGFloat = 15
+private let itemMargin :CGFloat = 10
 class StatusCell: UITableViewCell {
 
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -24,6 +25,11 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var contentLabelWidth: NSLayoutConstraint!
     
+    @IBOutlet weak var picViewHCons: NSLayoutConstraint!
+    
+    @IBOutlet weak var picViewWCons: NSLayoutConstraint!
+    
+    @IBOutlet weak var picView: PicCollectionView!
     
     var viewModel : StatusViewModel? {
         didSet {
@@ -45,6 +51,12 @@ class StatusCell: UITableViewCell {
             contentLabel.text = viewModel.status?.text
             
             nameLable.textColor = (viewModel.vipImage != nil) ? UIColor.orangeColor() : UIColor.blackColor()
+            
+            let picViewSize = calculatePicViewSize(viewModel.picURLs.count)
+            picViewHCons.constant = picViewSize.height
+            picViewWCons.constant = picViewSize.width
+            
+            picView.picURLs = viewModel.picURLs
         }
     }
     
@@ -55,4 +67,28 @@ class StatusCell: UITableViewCell {
         contentLabelWidth.constant = UIScreen.mainScreen().bounds.width - 2 * margin
     }
 
+}
+
+extension StatusCell {
+    private func calculatePicViewSize(count:Int) -> CGSize {
+        //没有配图
+        if count  == 0 {
+            return CGSizeZero
+        }
+        
+        //4张配图
+        let itemWH = (UIScreen.mainScreen().bounds.width - 2 * margin - 2 * itemMargin) / 3
+        if  count == 4 {
+            let picViewWH = 2 * itemWH + itemMargin
+            return CGSizeMake(picViewWH, picViewWH)
+        }
+        
+        //其他配图情况
+        let row = CGFloat((count - 1) / 3 + 1)
+        let picViewW = UIScreen.mainScreen().bounds.width - 2 * margin
+        let picViewH = row * itemWH + (row - 1) * itemMargin
+        return CGSizeMake(picViewW, picViewH)
+        
+        
+    }
 }

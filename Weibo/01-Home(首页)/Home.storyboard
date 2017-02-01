@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OZ9-xx-435">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OZ9-xx-435">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -133,7 +133,7 @@
                                             </variation>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天三十晚上闹大年" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhF-kD-W8c">
-                                            <rect key="frame" x="15" y="60" width="135" height="90"/>
+                                            <rect key="frame" x="15" y="60" width="135" height="20.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="135" id="ijR-zo-psH"/>
                                             </constraints>
@@ -141,14 +141,55 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NGw-Ps-nwS" customClass="PicCollectionView" customModule="Weibo" customModuleProvider="target">
+                                            <rect key="frame" x="15" y="90.5" width="218" height="67"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="67" id="4qa-tu-cw4"/>
+                                                <constraint firstAttribute="width" constant="218" id="7WV-Se-ajh"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zSN-Zn-v3h">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PicCell" id="kpw-z8-cPY" customClass="PicCell" customModule="Weibo" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6AI-Rm-GkJ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="6AI-Rm-GkJ" secondAttribute="trailing" id="0jF-U9-EUE"/>
+                                                        <constraint firstItem="6AI-Rm-GkJ" firstAttribute="top" secondItem="kpw-z8-cPY" secondAttribute="top" id="4p1-hd-R9g"/>
+                                                        <constraint firstAttribute="bottom" secondItem="6AI-Rm-GkJ" secondAttribute="bottom" id="75n-2q-2QI"/>
+                                                        <constraint firstItem="6AI-Rm-GkJ" firstAttribute="leading" secondItem="kpw-z8-cPY" secondAttribute="leading" id="KPS-QK-aQH"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="picImage" destination="6AI-Rm-GkJ" id="oIw-Uy-auC"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="TFj-mh-5eL" firstAttribute="leading" secondItem="hyD-mC-4jB" secondAttribute="leading" constant="15" id="5He-D0-K5G"/>
                                         <constraint firstItem="tSq-pc-vqe" firstAttribute="centerY" secondItem="vxr-he-Weu" secondAttribute="centerY" id="7m8-9V-AwQ"/>
+                                        <constraint firstItem="NGw-Ps-nwS" firstAttribute="top" secondItem="qhF-kD-W8c" secondAttribute="bottom" constant="10" id="Dpr-2s-Cfh"/>
                                         <constraint firstItem="qhF-kD-W8c" firstAttribute="leading" secondItem="TFj-mh-5eL" secondAttribute="leading" id="L1s-Md-jYd"/>
                                         <constraint firstItem="IQp-sr-Ulg" firstAttribute="bottom" secondItem="TFj-mh-5eL" secondAttribute="bottom" id="R4g-WU-Iw5"/>
                                         <constraint firstItem="4UF-XM-Juk" firstAttribute="leading" secondItem="hyD-mC-4jB" secondAttribute="leading" id="SIE-X4-c18"/>
                                         <constraint firstItem="TFj-mh-5eL" firstAttribute="top" secondItem="hyD-mC-4jB" secondAttribute="top" constant="10" id="TfU-Sp-NJM"/>
+                                        <constraint firstItem="4UF-XM-Juk" firstAttribute="top" secondItem="NGw-Ps-nwS" secondAttribute="bottom" priority="700" constant="10" id="Ujh-dp-b3P"/>
                                         <constraint firstItem="IQp-sr-Ulg" firstAttribute="leading" secondItem="vxr-he-Weu" secondAttribute="leading" id="YXs-rJ-O9M"/>
                                         <constraint firstAttribute="bottom" secondItem="4UF-XM-Juk" secondAttribute="bottom" id="ZLa-8g-Qcn"/>
                                         <constraint firstItem="Z4U-wd-s17" firstAttribute="bottom" secondItem="TFj-mh-5eL" secondAttribute="bottom" id="aOx-uc-Beh"/>
@@ -157,11 +198,17 @@
                                         <constraint firstItem="qhF-kD-W8c" firstAttribute="top" secondItem="TFj-mh-5eL" secondAttribute="bottom" constant="10" id="hdz-oc-1H2"/>
                                         <constraint firstItem="vxr-he-Weu" firstAttribute="top" secondItem="TFj-mh-5eL" secondAttribute="top" id="iwD-o7-KvN"/>
                                         <constraint firstItem="1Sz-VA-2cB" firstAttribute="leading" secondItem="IQp-sr-Ulg" secondAttribute="trailing" constant="10" id="oCv-IZ-sK9"/>
+                                        <constraint firstItem="NGw-Ps-nwS" firstAttribute="leading" secondItem="TFj-mh-5eL" secondAttribute="leading" id="uCK-Cu-4NP"/>
                                         <constraint firstItem="tSq-pc-vqe" firstAttribute="leading" secondItem="vxr-he-Weu" secondAttribute="trailing" constant="8" id="vd4-SB-CQ1"/>
                                         <constraint firstAttribute="trailing" secondItem="4UF-XM-Juk" secondAttribute="trailing" id="wBS-cQ-23Q"/>
                                         <constraint firstItem="1Sz-VA-2cB" firstAttribute="centerY" secondItem="IQp-sr-Ulg" secondAttribute="centerY" id="wX8-5Y-lml"/>
                                         <constraint firstItem="4UF-XM-Juk" firstAttribute="top" secondItem="qhF-kD-W8c" secondAttribute="bottom" constant="10" id="xvE-TE-qzZ"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="xvE-TE-qzZ"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="avatarImageView" destination="TFj-mh-5eL" id="W8o-ah-Lfo"/>
@@ -170,6 +217,9 @@
                                     <outlet property="createTimeLabel" destination="IQp-sr-Ulg" id="CfK-tM-bJv"/>
                                     <outlet property="fromLabel" destination="1Sz-VA-2cB" id="2wv-hO-1vj"/>
                                     <outlet property="nameLable" destination="vxr-he-Weu" id="jfR-0m-v7x"/>
+                                    <outlet property="picView" destination="NGw-Ps-nwS" id="akV-15-FIe"/>
+                                    <outlet property="picViewHCons" destination="4qa-tu-cw4" id="8Ic-Qk-M5v"/>
+                                    <outlet property="picViewWCons" destination="7WV-Se-ajh" id="ztL-mt-TTJ"/>
                                     <outlet property="verifyImageView" destination="Z4U-wd-s17" id="Ogz-Yq-uaN"/>
                                     <outlet property="vipImageView" destination="tSq-pc-vqe" id="gQd-yH-BaR"/>
                                 </connections>

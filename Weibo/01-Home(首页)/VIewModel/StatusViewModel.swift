@@ -22,6 +22,9 @@ class StatusViewModel: NSObject {
     var verifiedImage:UIImage?
     var vipImage:UIImage?
     
+    var picURLs :[NSURL] = [NSURL]()
+    
+    
     init(status:Status) {
         super.init()
         self.status = status
@@ -53,6 +56,15 @@ class StatusViewModel: NSObject {
         let mbrank = status.user?.mbrank ?? 0
         if (mbrank > 0 && mbrank <= 6) {
             vipImage = UIImage(named: "common_icon_membership_level\(mbrank)")
+        }
+        
+        if let picArray = status.pic_urls {
+            for picDict in picArray {
+                guard let picUrlString = picDict["thumbnail_pic"] else {
+                    continue
+                }
+                picURLs.append(NSURL(string: picUrlString)!)
+            }
         }
         
         

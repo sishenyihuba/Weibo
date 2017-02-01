@@ -40,6 +40,7 @@
 		A6B06DCB1E214E5B003D2501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B06DCA1E214E5B003D2501 /* AppDelegate.swift */; };
 		A6B06DD01E214E5B003D2501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B06DCE1E214E5B003D2501 /* Main.storyboard */; };
 		A6B06DD21E214E5B003D2501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B06DD11E214E5B003D2501 /* Assets.xcassets */; };
+		A6DA32E01E41DBC600A5506E /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA32DF1E41DBC600A5506E /* PicCollectionView.swift */; };
 		A79CE81C5B7474834A7F231F /* Pods_Weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F894D4662A720F37B41663E /* Pods_Weibo.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		A6B06DCF1E214E5B003D2501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6B06DD11E214E5B003D2501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6B06DD61E214E5B003D2501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6DA32DF1E41DBC600A5506E /* PicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		A6F2B7501E2615F80044D768 /* Weibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridging-Header.h"; sourceTree = "<group>"; };
 		C33CC6E30CC9D9278D252AF9 /* Pods-Weibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weibo/Pods-Weibo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				A65604D91E38AE3800F31620 /* StatusCell.swift */,
+				A6DA32DF1E41DBC600A5506E /* PicCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				A65604D01E38812400F31620 /* Status.swift in Sources */,
 				A69A6FF41E2D1E7D00D0C7DD /* WelcomeViewController.swift in Sources */,
 				A65604D41E389A2F00F31620 /* User.swift in Sources */,
+				A6DA32E01E41DBC600A5506E /* PicCollectionView.swift in Sources */,
 				A66E56FF1E26165C00F4CDFA /* ZWCustomPopView.m in Sources */,
 				A66E570B1E262A3600F4CDFA /* Global.swift in Sources */,
 				A666099F1E231FE3000C8897 /* HomeViewController.swift in Sources */,

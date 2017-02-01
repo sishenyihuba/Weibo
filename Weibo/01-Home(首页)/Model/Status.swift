@@ -20,6 +20,7 @@ class Status: NSObject {
  
     var user : User?
     
+    var pic_urls : [[String:String]]?
     
     init(dict: [String:AnyObject]) {
         super.init()
