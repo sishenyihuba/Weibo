@@ -30,7 +30,7 @@ class HomeViewController: BaseViewController {
             loadStatuses()
         
             tableView.estimatedRowHeight = 200
-            tableView.rowHeight = UITableViewAutomaticDimension
+        
         
     
         }
@@ -123,10 +123,17 @@ extension HomeViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as! StatusCell
         let viewModel = viewModels[indexPath.row]
         cell.viewModel = viewModel
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        let viewModel = viewModels[indexPath.row]
+        return viewModel.cellHeight
     }
 }
 

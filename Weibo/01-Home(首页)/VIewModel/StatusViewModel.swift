@@ -12,7 +12,7 @@ class StatusViewModel: NSObject {
 
     var status:Status?
     
-
+    var cellHeight:CGFloat = 0
     
     //处理微博数据,MVVM的应用
     var sourceText :String?

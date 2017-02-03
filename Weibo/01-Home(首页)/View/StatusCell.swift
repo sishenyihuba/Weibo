@@ -35,6 +35,8 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var picViewBottomCons: NSLayoutConstraint!
     
     @IBOutlet weak var retweetLabelTopCons: NSLayoutConstraint!
+    
+    @IBOutlet weak var bottomToolView: UIView!
     var viewModel : StatusViewModel? {
         didSet {
             guard let viewModel = viewModel else {
@@ -74,6 +76,13 @@ class StatusCell: UITableViewCell {
                 retweetView.hidden = true
                 retweetLabelTopCons.constant = 0
 
+            }
+            
+            //计算Cell高度
+            if (viewModel.cellHeight == 0) {
+                layoutIfNeeded()
+                let cellHeight = CGRectGetMaxY(bottomToolView.frame)
+                viewModel.cellHeight = cellHeight
             }
         }
     }
