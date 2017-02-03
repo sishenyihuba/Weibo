@@ -87,10 +87,10 @@ extension NetworkTools {
 
 //MARK: - 请求微博数据
 extension NetworkTools {
-    func loadStatuses(completionHandler:(result:[[String:AnyObject]]?, error:NSError?)->()) {
+    func loadStatuses(since_id :Int,max_id :Int, completionHandler:(result:[[String:AnyObject]]?, error:NSError?)->()) {
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let parameters = ["access_token" : (UserAccountViewModel.sharedInstance.account?.access_token)!]
-        request(.GET, urlString: urlString, parameters: parameters) { (result, error) in
+        let parameters = ["access_token" : (UserAccountViewModel.sharedInstance.account?.access_token)!, "since_id" : since_id,"max_id" : max_id]
+        request(.GET, urlString: urlString, parameters: parameters as! [String : AnyObject]) { (result, error) in
             guard let resultDict = result as?  [String:AnyObject] else {
                 return
             }

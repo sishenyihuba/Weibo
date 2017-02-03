@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import MJRefresh
 class HomeViewController: BaseViewController {
 
     
@@ -26,12 +27,12 @@ class HomeViewController: BaseViewController {
             setupHomeNavi()
             
             setupTitleBarItem()
-            
-            loadStatuses()
         
             tableView.estimatedRowHeight = 200
         
+            setupHeaderRefresh()
         
+            setupFooterRefresh()
     
         }
     }
@@ -47,6 +48,24 @@ extension HomeViewController {
         navigationItem.titleView = titleBtn
         titleBtn.addTarget(self, action: #selector(HomeViewController.titleBtnDidTouch(_:)), forControlEvents: .TouchUpInside)
     }
+    
+    private func  setupHeaderRefresh() {
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadNewStatuses))
+        
+        header.setTitle("下拉刷新", forState: .Idle)
+        header.setTitle("释放刷新", forState: .Pulling)
+        header.setTitle("加载中", forState: .Refreshing)
+        
+        tableView.mj_header = header
+        
+        tableView.mj_header.beginRefreshing()
+
+    }
+
+    private func   setupFooterRefresh() {
+        tableView.mj_footer = MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadMoreStatuses))
+    }
+
 
 }
 
@@ -77,8 +96,25 @@ extension HomeViewController : ZWCustomPopViewDelegate {
 
 //MARK: - 加载微博数据
 extension HomeViewController {
-    func loadStatuses() {
-        NetworkTools.shareInstance.loadStatuses { (result, error) in
+    @objc private func loadNewStatuses() {
+        loadStatuses(true)
+    }
+    
+    @objc private func loadMoreStatuses() {
+        loadStatuses(false)
+    }
+    
+    func loadStatuses(isNewStatus:Bool) {
+        var since_id = 0
+        var max_id = 0
+        if isNewStatus {
+            since_id = viewModels.first?.status?.mid ?? 0
+        } else {
+            max_id = viewModels.last?.status?.mid ?? 0
+            max_id = (max_id == 0) ? 0 : (max_id - 1)
+        }
+        
+        NetworkTools.shareInstance.loadStatuses(since_id, max_id: max_id) { (result, error) in
             if error != nil {
                 return
             }
@@ -86,14 +122,19 @@ extension HomeViewController {
                 return
             }
             
+            var tempModels = [StatusViewModel]()
             for item in resultArray {
                 let status = Status(dict: item)
-                self.viewModels.append(StatusViewModel(status: status))
+                tempModels.append(StatusViewModel(status: status))
+            }
+            if isNewStatus {
+                self.viewModels = tempModels + self.viewModels
+            } else {
+                self.viewModels += tempModels
             }
             
-            
             //缓存下载图片
-            self.loadImageCache(self.viewModels)
+            self.loadImageCache(tempModels)
         }
     }
     
@@ -112,6 +153,8 @@ extension HomeViewController {
         dispatch_group_notify(group, dispatch_get_main_queue()) { 
             
             self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
         }
     }
 }
