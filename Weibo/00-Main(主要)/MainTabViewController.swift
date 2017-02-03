@@ -33,7 +33,7 @@ class MainTabViewController: UITabBarController {
     }
 
     @objc private func composeBtnDidTouch() {
-        print("afda")
+        
     }
     
 }

@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let isLogin  = UserAccountViewModel.sharedInstance.isLogin
         let defaultVC = isLogin ? WelcomeViewController() : UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
         window?.rootViewController = defaultVC
+        
         return true
     }
     

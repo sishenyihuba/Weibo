@@ -58,7 +58,8 @@ class StatusViewModel: NSObject {
             vipImage = UIImage(named: "common_icon_membership_level\(mbrank)")
         }
         
-        if let picArray = status.pic_urls {
+        let picArray = (status.pic_urls?.count != 0) ? status.pic_urls : status.retweeted_status?.pic_urls
+        if let picArray = picArray {
             for picDict in picArray {
                 guard let picUrlString = picDict["thumbnail_pic"] else {
                     continue

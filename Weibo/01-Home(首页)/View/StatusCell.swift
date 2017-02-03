@@ -25,12 +25,16 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var contentLabelWidth: NSLayoutConstraint!
     
+    @IBOutlet weak var retweetContentLabel: UILabel!
     @IBOutlet weak var picViewHCons: NSLayoutConstraint!
     
     @IBOutlet weak var picViewWCons: NSLayoutConstraint!
     
     @IBOutlet weak var picView: PicCollectionView!
+    @IBOutlet weak var retweetView: UIView!
+    @IBOutlet weak var picViewBottomCons: NSLayoutConstraint!
     
+    @IBOutlet weak var retweetLabelTopCons: NSLayoutConstraint!
     var viewModel : StatusViewModel? {
         didSet {
             guard let viewModel = viewModel else {
@@ -57,6 +61,20 @@ class StatusCell: UITableViewCell {
             picViewWCons.constant = picViewSize.width
             
             picView.picURLs = viewModel.picURLs
+            
+            if viewModel.status?.retweeted_status != nil {
+                if let screenName = viewModel.status?.retweeted_status?.user?.screen_name , retweetText = viewModel.status?.retweeted_status?.text {
+                    
+                    retweetContentLabel.text = "@\(screenName):\n" + retweetText
+                    retweetView.hidden = false
+                    retweetLabelTopCons.constant = 15
+                }
+            } else {
+                retweetContentLabel.text = nil
+                retweetView.hidden = true
+                retweetLabelTopCons.constant = 0
+
+            }
         }
     }
     
@@ -73,8 +91,11 @@ extension StatusCell {
     private func calculatePicViewSize(count:Int) -> CGSize {
         //没有配图
         if count  == 0 {
+            picViewBottomCons.constant = 0
             return CGSizeZero
         }
+        
+        picViewBottomCons.constant = 10
         
         let flowLayout = picView.collectionViewLayout as! UICollectionViewFlowLayout
         

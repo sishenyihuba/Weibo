@@ -53,7 +53,7 @@ extension BaseViewController {
 //MARK: - 点击事件
 extension BaseViewController{
     @objc private func registerDidTouch() {
-        print("registerDidTouch")
+        
     }
     
     

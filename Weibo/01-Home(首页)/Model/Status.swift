@@ -22,6 +22,8 @@ class Status: NSObject {
     
     var pic_urls : [[String:String]]?
     
+    var retweeted_status : Status?
+    
     init(dict: [String:AnyObject]) {
         super.init()
         
@@ -31,6 +33,13 @@ class Status: NSObject {
             return
         }
         self.user = User(dict: user)
+        
+        guard let retweeted_status = dict["retweeted_status"] as? [String : AnyObject] else {
+            return
+        }
+        
+        self.retweeted_status = Status(dict: retweeted_status)
+        
     }
     
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {

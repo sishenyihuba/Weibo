@@ -101,7 +101,6 @@ extension OAuthViewController {
     private func loadAccessToken(code:String) {
         NetworkTools.shareInstance.loadAccessToken(code) { (result, error) in
             if error != nil {
-                print(error)
                 return
             }
             guard let accoutDict = result else {

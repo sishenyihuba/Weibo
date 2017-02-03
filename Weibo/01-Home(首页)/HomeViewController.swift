@@ -103,14 +103,14 @@ extension HomeViewController {
             for picURL in viewModel.picURLs {
                 dispatch_group_enter(group)
                 SDWebImageManager.sharedManager().downloadImageWithURL(picURL, options: [], progress: nil, completed: { (_, _, _, _, _) in
-                    print("下载完一张图片")
+                    
                     dispatch_group_leave(group)
                 })
             }
         }
         
         dispatch_group_notify(group, dispatch_get_main_queue()) { 
-            print("刷新表格")
+            
             self.tableView.reloadData()
         }
     }
