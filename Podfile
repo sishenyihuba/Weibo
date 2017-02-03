@@ -7,4 +7,6 @@ target 'Weibo' do
   pod 'SVProgressHUD'
   pod 'SDWebImage'
   pod 'MJRefresh'
+   pod 'SnapKit', '~> 0.22.0'
+   pod 'ActiveLabel', '~> 0.6.0'
 end

@@ -16,6 +16,8 @@ class HomeViewController: BaseViewController {
     private lazy var titleBtn:TitleButton = TitleButton()
     private lazy var popMenuArray = ["iOS", "WatchOS","SiriKit","NotificationFW"]
     private lazy var viewModels :[StatusViewModel] = [StatusViewModel]()
+    private lazy var tipLabel : UILabel = UILabel()
+    
     override func viewDidLoad() {
             super.viewDidLoad()
             visitorView.addRotateAnim()
@@ -33,6 +35,8 @@ class HomeViewController: BaseViewController {
             setupHeaderRefresh()
         
             setupFooterRefresh()
+        
+            setupTipLabel()
     
         }
     }
@@ -66,6 +70,17 @@ extension HomeViewController {
         tableView.mj_footer = MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadMoreStatuses))
     }
 
+    
+    private func setupTipLabel() {
+        tipLabel.frame = CGRect(x: 0, y: 10, width: UIScreen.mainScreen().bounds.width, height: 25)
+        tipLabel.font = UIFont.systemFontOfSize(14)
+        tipLabel.backgroundColor = UIColor.orangeColor()
+        tipLabel.textAlignment = .Center
+        tipLabel.textColor = UIColor.whiteColor()
+        navigationController?.navigationBar.insertSubview(tipLabel, atIndex: 0)
+        tipLabel.hidden = true
+        
+    }
 
 }
 
@@ -155,6 +170,21 @@ extension HomeViewController {
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
+            self.showTipLabel(viewModels.count)
+        }
+    }
+    
+    func showTipLabel(count :Int) {
+        UIView.animateWithDuration(1.0, animations: { 
+            self.tipLabel.hidden = false
+            self.tipLabel.frame.origin.y = 44
+            self.tipLabel.text = (count == 0) ? "没有新微博" : "新的\(count)条微博"
+            }) { (_) in
+                UIView.animateWithDuration(1.0, delay: 1.5, options: [], animations: { 
+                    self.tipLabel.frame.origin.y = 10
+                    }, completion: { (_) in
+                        self.tipLabel.hidden = true
+                })
         }
     }
 }

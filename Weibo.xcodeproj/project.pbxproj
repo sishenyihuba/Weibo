@@ -26,6 +26,8 @@
 		A66609B81E238F70000C8897 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66609B71E238F70000C8897 /* BaseViewController.swift */; };
 		A66609BB1E2390C0000C8897 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66609BA1E2390C0000C8897 /* VisitorView.swift */; };
 		A66609BD1E2390D3000C8897 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A66609BC1E2390D3000C8897 /* VisitorView.xib */; };
+		A66C896F1E446BFE00FF7C3A /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C896D1E446BFE00FF7C3A /* ComposeViewController.swift */; };
+		A66C89701E446BFE00FF7C3A /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A66C896E1E446BFE00FF7C3A /* ComposeViewController.xib */; };
 		A66E56FD1E26165C00F4CDFA /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E56F71E26165C00F4CDFA /* UIBarButtonItem+Extension.swift */; };
 		A66E56FE1E26165C00F4CDFA /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66E56FA1E26165C00F4CDFA /* TitleButton.swift */; };
 		A66E56FF1E26165C00F4CDFA /* ZWCustomPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A66E56FC1E26165C00F4CDFA /* ZWCustomPopView.m */; };
@@ -37,6 +39,7 @@
 		A69A6FF01E2D1BE300D0C7DD /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69A6FEF1E2D1BE300D0C7DD /* UserAccountViewModel.swift */; };
 		A69A6FF41E2D1E7D00D0C7DD /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69A6FF21E2D1E7D00D0C7DD /* WelcomeViewController.swift */; };
 		A69A6FF51E2D1E7D00D0C7DD /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A69A6FF31E2D1E7D00D0C7DD /* WelcomeViewController.xib */; };
+		A6A3506A1E44896F005BFD98 /* CpomposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A350691E44896F005BFD98 /* CpomposeTextView.swift */; };
 		A6B06DCB1E214E5B003D2501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B06DCA1E214E5B003D2501 /* AppDelegate.swift */; };
 		A6B06DD01E214E5B003D2501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B06DCE1E214E5B003D2501 /* Main.storyboard */; };
 		A6B06DD21E214E5B003D2501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B06DD11E214E5B003D2501 /* Assets.xcassets */; };
@@ -66,6 +69,8 @@
 		A66609B71E238F70000C8897 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A66609BA1E2390C0000C8897 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		A66609BC1E2390D3000C8897 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		A66C896D1E446BFE00FF7C3A /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		A66C896E1E446BFE00FF7C3A /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		A66E56F71E26165C00F4CDFA /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		A66E56FA1E26165C00F4CDFA /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		A66E56FB1E26165C00F4CDFA /* ZWCustomPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWCustomPopView.h; sourceTree = "<group>"; };
@@ -78,6 +83,7 @@
 		A69A6FEF1E2D1BE300D0C7DD /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		A69A6FF21E2D1E7D00D0C7DD /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A69A6FF31E2D1E7D00D0C7DD /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		A6A350691E44896F005BFD98 /* CpomposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CpomposeTextView.swift; sourceTree = "<group>"; };
 		A6B06DC71E214E5B003D2501 /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B06DCA1E214E5B003D2501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6B06DCF1E214E5B003D2501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +175,16 @@
 			path = VisitorView;
 			sourceTree = "<group>";
 		};
+		A66C896C1E446BDC00FF7C3A /* 06-Compose(发布) */ = {
+			isa = PBXGroup;
+			children = (
+				A6A350681E44894B005BFD98 /* View */,
+				A66C896D1E446BFE00FF7C3A /* ComposeViewController.swift */,
+				A66C896E1E446BFE00FF7C3A /* ComposeViewController.xib */,
+			);
+			path = "06-Compose(发布)";
+			sourceTree = "<group>";
+		};
 		A66E56F61E26165C00F4CDFA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +244,14 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		A6A350681E44894B005BFD98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6A350691E44896F005BFD98 /* CpomposeTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A6B06DBE1E214E5B003D2501 = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +279,7 @@
 				A6B06DDF1E214F93003D2501 /* 03-Discover(发现) */,
 				A6B06DE01E214F93003D2501 /* 04-Me(我) */,
 				A6F2B7441E24BC510044D768 /* 05-Tools */,
+				A66C896C1E446BDC00FF7C3A /* 06-Compose(发布) */,
 				A6B06DCA1E214E5B003D2501 /* AppDelegate.swift */,
 				A6F2B7501E2615F80044D768 /* Weibo-Bridging-Header.h */,
 				A6B06DCE1E214E5B003D2501 /* Main.storyboard */,
@@ -397,6 +422,7 @@
 				A6B06DD01E214E5B003D2501 /* Main.storyboard in Resources */,
 				A69A6FF51E2D1E7D00D0C7DD /* WelcomeViewController.xib in Resources */,
 				A66609AA1E235F73000C8897 /* Message.storyboard in Resources */,
+				A66C89701E446BFE00FF7C3A /* ComposeViewController.xib in Resources */,
 				A666099D1E231FBF000C8897 /* MainVCSettings.json in Resources */,
 				A66609A71E235F60000C8897 /* Home.storyboard in Resources */,
 				A66609AF1E235F90000C8897 /* Me.storyboard in Resources */,
@@ -462,8 +488,10 @@
 				A66609A51E232008000C8897 /* MeViewController.swift in Sources */,
 				A65604D71E389FFE00F31620 /* StatusViewModel.swift in Sources */,
 				A6B06DCB1E214E5B003D2501 /* AppDelegate.swift in Sources */,
+				A66C896F1E446BFE00FF7C3A /* ComposeViewController.swift in Sources */,
 				A66E570F1E2772C500F4CDFA /* NetworkTools.swift in Sources */,
 				A65604D21E388EBD00F31620 /* NSDate-Extension.swift in Sources */,
+				A6A3506A1E44896F005BFD98 /* CpomposeTextView.swift in Sources */,
 				A666099A1E231EC9000C8897 /* MainTabViewController.swift in Sources */,
 				A66609A11E231FF1000C8897 /* MessageViewController.swift in Sources */,
 				A65604D01E38812400F31620 /* Status.swift in Sources */,

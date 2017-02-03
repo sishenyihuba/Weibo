@@ -1,2 +1,0 @@
-/Users/daixianglong/Library/Developer/Xcode/DerivedData/Weibo-hicnfwqkhmzkcvgnuwqktplkdzxe/Build/Products/Debug-iphonesimulator/Weibo.app
-iPhone Developer

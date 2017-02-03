@@ -33,7 +33,11 @@ class MainTabViewController: UITabBarController {
     }
 
     @objc private func composeBtnDidTouch() {
+        let composeVC = ComposeViewController()
         
+        let navi = UINavigationController(rootViewController: composeVC)
+        
+        presentViewController(navi, animated: true, completion: nil)
     }
     
 }
