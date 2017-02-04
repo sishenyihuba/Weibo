@@ -119,7 +119,7 @@ extension StatusCell {
         flowLayout.itemSize = CGSizeMake(itemWH, itemWH)
         //4张配图
         if  count == 4 {
-            let picViewWH = 2 * itemWH + itemMargin
+            let picViewWH = 2 * itemWH + itemMargin + 1
             return CGSizeMake(picViewWH, picViewWH)
         }
         

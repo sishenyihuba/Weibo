@@ -12,7 +12,11 @@ class ComposeViewController: UIViewController {
     
     @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var picPickerHCons: NSLayoutConstraint!
     @IBOutlet weak var composeTextView: ComposeTextView!
+    
+    @IBOutlet weak var picPickerCollectionView: PicPickerCollectionView!
+    private lazy var images :[UIImage] = [UIImage]()
 
     
     override func viewDidLoad() {
@@ -20,7 +24,7 @@ class ComposeViewController: UIViewController {
 
         setupNaviUI()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ComposeViewController.KeyboardDidChangeFrame(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
+        setupNotifications()
         
     }
     
@@ -46,6 +50,15 @@ extension ComposeViewController {
         title = "发微博"
 
     }
+    
+    
+    private func setupNotifications(){
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ComposeViewController.KeyboardDidChangeFrame(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ComposeViewController.picDidPick(_:)), name: picDidPickNoti, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ComposeViewController.picDidDelete(_:)), name: picDidDeleteNoti, object: nil)
+    }
 }
 extension ComposeViewController {
 
@@ -55,6 +68,15 @@ extension ComposeViewController {
     
     func sendCompose() {
         
+    }
+    
+    @IBAction func picBtnClick(sender: AnyObject) {
+        composeTextView.resignFirstResponder()
+        
+        picPickerHCons.constant = UIScreen.mainScreen().bounds.height * 0.65
+        UIView.animateWithDuration(0.5) { 
+            self.view.layoutIfNeeded()
+        }
     }
 }
 
@@ -81,4 +103,47 @@ extension ComposeViewController {
             self.view.layoutIfNeeded()
         }
     }
+    
+    @objc private func picDidPick(noti: NSNotification) {
+        if !UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+            return
+        }
+        
+        let ipc = UIImagePickerController()
+        
+        ipc.sourceType = .PhotoLibrary
+        
+        ipc.delegate = self
+        
+        presentViewController(ipc, animated: true, completion: nil)
+    }
+    
+    @objc private func picDidDelete(noti:NSNotification) {
+        guard let image = noti.object as? UIImage else {
+            return
+        }
+        
+        guard let index = images.indexOf(image) else {
+            return
+        }
+        images.removeAtIndex(index)
+        
+        picPickerCollectionView.images = images
+        
+    }
+}
+
+
+extension ComposeViewController :UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        images.append(image)
+        
+        picPickerCollectionView.images = images
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
 }

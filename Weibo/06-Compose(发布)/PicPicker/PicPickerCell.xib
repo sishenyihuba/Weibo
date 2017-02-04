@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PicPickerCell" customModule="Weibo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="117" height="109"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="117" height="109"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzg-Wd-19f">
+                        <rect key="frame" x="0.0" y="0.0" width="117" height="109"/>
+                        <state key="normal" backgroundImage="compose_pic_add"/>
+                        <state key="highlighted" backgroundImage="compose_pic_add_highlighted"/>
+                        <connections>
+                            <action selector="picPickerDidTouch:" destination="gTV-IL-0wX" eventType="touchUpInside" id="v6Z-5O-zBf"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VEW-ma-FA3">
+                        <rect key="frame" x="0.0" y="0.0" width="117" height="109"/>
+                    </imageView>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDz-kz-28q">
+                        <rect key="frame" x="93" y="0.0" width="24" height="24"/>
+                        <state key="normal" image="compose_photo_close"/>
+                        <connections>
+                            <action selector="deletePicDidTouch:" destination="gTV-IL-0wX" eventType="touchUpInside" id="qZ3-vd-XOJ"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="VEW-ma-FA3" secondAttribute="trailing" id="135-zc-oxr"/>
+                <constraint firstItem="yzg-Wd-19f" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8Du-Oc-l5s"/>
+                <constraint firstAttribute="bottom" secondItem="yzg-Wd-19f" secondAttribute="bottom" id="CGf-Py-Eh6"/>
+                <constraint firstItem="yzg-Wd-19f" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="CMA-qx-5TH"/>
+                <constraint firstAttribute="trailing" secondItem="HDz-kz-28q" secondAttribute="trailing" id="CSD-ny-TDX"/>
+                <constraint firstAttribute="bottom" secondItem="VEW-ma-FA3" secondAttribute="bottom" id="IHS-LW-Jwb"/>
+                <constraint firstAttribute="trailing" secondItem="yzg-Wd-19f" secondAttribute="trailing" id="QkS-1e-3h8"/>
+                <constraint firstItem="VEW-ma-FA3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iPZ-mF-Ek5"/>
+                <constraint firstItem="VEW-ma-FA3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qWk-ih-oQG"/>
+                <constraint firstItem="HDz-kz-28q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="uqC-X8-UtX"/>
+            </constraints>
+            <size key="customSize" width="117" height="109"/>
+            <connections>
+                <outlet property="addPicBtn" destination="yzg-Wd-19f" id="hoa-to-sP7"/>
+                <outlet property="deleteBtn" destination="HDz-kz-28q" id="Dy7-Sd-2lQ"/>
+                <outlet property="imageView" destination="VEW-ma-FA3" id="V1W-7L-vvC"/>
+            </connections>
+            <point key="canvasLocation" x="167.5" y="218.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="compose_photo_close" width="24" height="24"/>
+        <image name="compose_pic_add" width="70" height="70"/>
+        <image name="compose_pic_add_highlighted" width="70" height="70"/>
+    </resources>
+</document>

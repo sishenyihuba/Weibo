@@ -7,6 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController" customModule="Weibo" customModuleProvider="target">
             <connections>
                 <outlet property="composeTextView" destination="A4b-Uh-yAq" id="0zO-28-g4z"/>
+                <outlet property="picPickerCollectionView" destination="mcg-e5-73V" id="duk-Vb-K2Q"/>
+                <outlet property="picPickerHCons" destination="1Z5-f2-vus" id="KtT-KZ-zoS"/>
                 <outlet property="toolBar" destination="wQz-nJ-ODt" id="VZg-Od-v9f"/>
                 <outlet property="toolBarBottomCons" destination="Ikx-kv-e9U" id="kNv-zP-Ukv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -26,6 +28,19 @@
                         <outlet property="delegate" destination="-1" id="OaM-4R-T1r"/>
                     </connections>
                 </textView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mcg-e5-73V" customClass="PicPickerCollectionView" customModule="Weibo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="600" width="600" height="0.0"/>
+                    <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="1Z5-f2-vus"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="uPe-uD-Mvf">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQz-nJ-ODt">
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <constraints>
@@ -39,6 +54,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="compose_toolbar_picture"/>
                                 <state key="highlighted" image="compose_toolbar_picture_highlighted"/>
+                                <connections>
+                                    <action selector="picBtnClick:" destination="-1" eventType="touchUpInside" id="vwl-4b-5mB"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="MTG-8O-wrX"/>
@@ -83,14 +101,25 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="mcg-e5-73V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7mf-7r-0oN"/>
                 <constraint firstAttribute="trailing" secondItem="A4b-Uh-yAq" secondAttribute="trailing" id="8kI-wo-ncE"/>
+                <constraint firstItem="mcg-e5-73V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Djd-MK-bmg"/>
                 <constraint firstAttribute="bottom" secondItem="wQz-nJ-ODt" secondAttribute="bottom" id="Ikx-kv-e9U"/>
+                <constraint firstAttribute="trailing" secondItem="mcg-e5-73V" secondAttribute="trailing" id="MmY-hW-zbz"/>
                 <constraint firstAttribute="bottom" secondItem="A4b-Uh-yAq" secondAttribute="bottom" id="Nga-vY-XQD"/>
                 <constraint firstItem="A4b-Uh-yAq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PAx-OO-1m1"/>
                 <constraint firstAttribute="trailing" secondItem="wQz-nJ-ODt" secondAttribute="trailing" id="Uc2-mY-vps"/>
+                <constraint firstAttribute="bottom" secondItem="mcg-e5-73V" secondAttribute="bottom" id="aTO-8y-hf3"/>
                 <constraint firstItem="wQz-nJ-ODt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bAA-6v-UDW"/>
                 <constraint firstItem="A4b-Uh-yAq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bao-d6-GMe"/>
+                <constraint firstItem="wQz-nJ-ODt" firstAttribute="top" secondItem="mcg-e5-73V" secondAttribute="bottom" id="ejO-o0-LZE"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="7mf-7r-0oN"/>
+                    <exclude reference="ejO-o0-LZE"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="221" y="106"/>
         </view>
     </objects>

@@ -44,6 +44,9 @@
 		A6B06DD01E214E5B003D2501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B06DCE1E214E5B003D2501 /* Main.storyboard */; };
 		A6B06DD21E214E5B003D2501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B06DD11E214E5B003D2501 /* Assets.xcassets */; };
 		A6DA32E01E41DBC600A5506E /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA32DF1E41DBC600A5506E /* PicCollectionView.swift */; };
+		A6DE1E9A1E45763400CD561D /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE1E991E45763400CD561D /* PicPickerCollectionView.swift */; };
+		A6DE1E9D1E45779200CD561D /* PicPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE1E9B1E45779200CD561D /* PicPickerCell.swift */; };
+		A6DE1E9E1E45779200CD561D /* PicPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DE1E9C1E45779200CD561D /* PicPickerCell.xib */; };
 		A79CE81C5B7474834A7F231F /* Pods_Weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F894D4662A720F37B41663E /* Pods_Weibo.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,9 @@
 		A6B06DD11E214E5B003D2501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6B06DD61E214E5B003D2501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6DA32DF1E41DBC600A5506E /* PicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
+		A6DE1E991E45763400CD561D /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
+		A6DE1E9B1E45779200CD561D /* PicPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerCell.swift; sourceTree = "<group>"; };
+		A6DE1E9C1E45779200CD561D /* PicPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicPickerCell.xib; sourceTree = "<group>"; };
 		A6F2B7501E2615F80044D768 /* Weibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridging-Header.h"; sourceTree = "<group>"; };
 		C33CC6E30CC9D9278D252AF9 /* Pods-Weibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weibo/Pods-Weibo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +184,7 @@
 		A66C896C1E446BDC00FF7C3A /* 06-Compose(发布) */ = {
 			isa = PBXGroup;
 			children = (
+				A6DE1E981E45738600CD561D /* PicPicker */,
 				A6A350681E44894B005BFD98 /* View */,
 				A66C896D1E446BFE00FF7C3A /* ComposeViewController.swift */,
 				A66C896E1E446BFE00FF7C3A /* ComposeViewController.xib */,
@@ -341,6 +348,16 @@
 			path = "04-Me(我)";
 			sourceTree = "<group>";
 		};
+		A6DE1E981E45738600CD561D /* PicPicker */ = {
+			isa = PBXGroup;
+			children = (
+				A6DE1E991E45763400CD561D /* PicPickerCollectionView.swift */,
+				A6DE1E9B1E45779200CD561D /* PicPickerCell.swift */,
+				A6DE1E9C1E45779200CD561D /* PicPickerCell.xib */,
+			);
+			path = PicPicker;
+			sourceTree = "<group>";
+		};
 		A6F2B7441E24BC510044D768 /* 05-Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +443,7 @@
 				A666099D1E231FBF000C8897 /* MainVCSettings.json in Resources */,
 				A66609A71E235F60000C8897 /* Home.storyboard in Resources */,
 				A66609AF1E235F90000C8897 /* Me.storyboard in Resources */,
+				A6DE1E9E1E45779200CD561D /* PicPickerCell.xib in Resources */,
 				A66609BD1E2390D3000C8897 /* VisitorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,10 +506,12 @@
 				A66609A51E232008000C8897 /* MeViewController.swift in Sources */,
 				A65604D71E389FFE00F31620 /* StatusViewModel.swift in Sources */,
 				A6B06DCB1E214E5B003D2501 /* AppDelegate.swift in Sources */,
+				A6DE1E9D1E45779200CD561D /* PicPickerCell.swift in Sources */,
 				A66C896F1E446BFE00FF7C3A /* ComposeViewController.swift in Sources */,
 				A66E570F1E2772C500F4CDFA /* NetworkTools.swift in Sources */,
 				A65604D21E388EBD00F31620 /* NSDate-Extension.swift in Sources */,
 				A6A3506A1E44896F005BFD98 /* CpomposeTextView.swift in Sources */,
+				A6DE1E9A1E45763400CD561D /* PicPickerCollectionView.swift in Sources */,
 				A666099A1E231EC9000C8897 /* MainTabViewController.swift in Sources */,
 				A66609A11E231FF1000C8897 /* MessageViewController.swift in Sources */,
 				A65604D01E38812400F31620 /* Status.swift in Sources */,
