@@ -10,6 +10,8 @@ import UIKit
 
 class ComposeViewController: UIViewController {
     
+    @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
+    @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var composeTextView: ComposeTextView!
 
     
@@ -17,6 +19,17 @@ class ComposeViewController: UIViewController {
         super.viewDidLoad()
 
         setupNaviUI()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ComposeViewController.KeyboardDidChangeFrame(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
+        
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         composeTextView.becomeFirstResponder()
     }
@@ -34,8 +47,8 @@ extension ComposeViewController {
 
     }
 }
-
 extension ComposeViewController {
+
     func closeCompose() {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -53,5 +66,19 @@ extension ComposeViewController : UITextViewDelegate {
     
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         composeTextView.resignFirstResponder()
+    }
+}
+
+extension ComposeViewController {
+    @objc private func KeyboardDidChangeFrame(noti:NSNotification) {
+        let during = noti.userInfo!["UIKeyboardAnimationDurationUserInfoKey"] as! NSTimeInterval
+        let endRect = (noti.userInfo!["UIKeyboardFrameEndUserInfoKey"] as! NSValue).CGRectValue()
+        let y = endRect.origin.y
+        let margin = UIScreen.mainScreen().bounds.height - y
+        
+        toolBarBottomCons.constant = margin
+        UIView.animateWithDuration(during) { 
+            self.view.layoutIfNeeded()
+        }
     }
 }
