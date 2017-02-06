@@ -17,6 +17,10 @@ class ComposeViewController: UIViewController {
     
     @IBOutlet weak var picPickerCollectionView: PicPickerCollectionView!
     private lazy var images :[UIImage] = [UIImage]()
+    private lazy var emoticonVc :EmoticonController = EmoticonController {  [weak self] (emoticon) -> () in
+        self?.composeTextView.insertEmoticon(emoticon)
+        self?.textViewDidChange(self!.composeTextView)
+    }
 
     
     override func viewDidLoad() {
@@ -67,9 +71,15 @@ extension ComposeViewController {
     }
     
     func sendCompose() {
-        
+        print(self.composeTextView.getEmoticonString())
     }
     
+    @IBAction func emoticonBtnClick(sender: AnyObject) {
+        composeTextView.resignFirstResponder()
+        composeTextView.inputView = composeTextView.inputView != nil ?  nil : emoticonVc.view
+        composeTextView.becomeFirstResponder()
+    }
+
     @IBAction func picBtnClick(sender: AnyObject) {
         composeTextView.resignFirstResponder()
         
