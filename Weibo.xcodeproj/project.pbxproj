@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A60A094A1E48636400357AC9 /* FindEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60A09491E48636400357AC9 /* FindEmoticon.swift */; };
 		A65604D01E38812400F31620 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65604CF1E38812400F31620 /* Status.swift */; };
 		A65604D21E388EBD00F31620 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65604D11E388EBD00F31620 /* NSDate-Extension.swift */; };
 		A65604D41E389A2F00F31620 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65604D31E389A2F00F31620 /* User.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		926ED07EE8870439B5F45E93 /* Pods-Weibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weibo/Pods-Weibo.release.xcconfig"; sourceTree = "<group>"; };
 		9F894D4662A720F37B41663E /* Pods_Weibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A60A09491E48636400357AC9 /* FindEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindEmoticon.swift; sourceTree = "<group>"; };
 		A65604CF1E38812400F31620 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		A65604D11E388EBD00F31620 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		A65604D31E389A2F00F31620 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 		A6DE1EC01E484D0800CD561D /* Emoticon */ = {
 			isa = PBXGroup;
 			children = (
+				A60A09491E48636400357AC9 /* FindEmoticon.swift */,
 				A6DE1EC11E484D0800CD561D /* EmioticonViewCell.swift */,
 				A6DE1EC21E484D0800CD561D /* EmoticonAttachment.swift */,
 				A6DE1EC31E484D0800CD561D /* EmoticonController.swift */,
@@ -560,6 +563,7 @@
 				A66609A11E231FF1000C8897 /* MessageViewController.swift in Sources */,
 				A65604D01E38812400F31620 /* Status.swift in Sources */,
 				A69A6FF41E2D1E7D00D0C7DD /* WelcomeViewController.swift in Sources */,
+				A60A094A1E48636400357AC9 /* FindEmoticon.swift in Sources */,
 				A65604D41E389A2F00F31620 /* User.swift in Sources */,
 				A6DA32E01E41DBC600A5506E /* PicCollectionView.swift in Sources */,
 				A66E56FF1E26165C00F4CDFA /* ZWCustomPopView.m in Sources */,
