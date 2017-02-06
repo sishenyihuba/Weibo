@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class ComposeViewController: UIViewController {
     
     @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
@@ -71,7 +71,28 @@ extension ComposeViewController {
     }
     
     func sendCompose() {
-        print(self.composeTextView.getEmoticonString())
+        composeTextView.resignFirstResponder()
+        
+        let statusStringToSend = composeTextView.getEmoticonString()
+        
+        
+        // 2.定义回调的闭包
+        let finishedCallback = { (isSuccess : Bool) -> () in
+            if !isSuccess {
+                SVProgressHUD.showErrorWithStatus("发送微博失败")
+                return
+            }
+            SVProgressHUD.showSuccessWithStatus("发送微博成功")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        
+        if let image = images.first {
+            NetworkTools.shareInstance.sendStatus(statusStringToSend, image: image, isSuccess: finishedCallback)
+        } else {
+            NetworkTools.shareInstance.sendStatus(statusStringToSend, isSuccess: finishedCallback)
+        }
+        
     }
     
     @IBAction func emoticonBtnClick(sender: AnyObject) {
