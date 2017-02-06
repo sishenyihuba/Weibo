@@ -119,8 +119,8 @@
             </constraints>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="7mf-7r-0oN"/>
                     <exclude reference="ejO-o0-LZE"/>
+                    <exclude reference="7mf-7r-0oN"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="221" y="106"/>

@@ -8,7 +8,7 @@
 
 import UIKit
 import SDWebImage
-
+import HYLabel
 private let  margin : CGFloat = 15
 private let itemMargin :CGFloat = 10
 class StatusCell: UITableViewCell {
@@ -22,10 +22,10 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var createTimeLabel: UILabel!
     
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: HYLabel!
     @IBOutlet weak var contentLabelWidth: NSLayoutConstraint!
     
-    @IBOutlet weak var retweetContentLabel: UILabel!
+    @IBOutlet weak var retweetContentLabel: HYLabel!
     @IBOutlet weak var picViewHCons: NSLayoutConstraint!
     
     @IBOutlet weak var picViewWCons: NSLayoutConstraint!
@@ -93,6 +93,8 @@ class StatusCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         contentLabelWidth.constant = UIScreen.mainScreen().bounds.width - 2 * margin
+        
+        setupLabelUI()
     }
 
 }
@@ -129,7 +131,31 @@ extension StatusCell {
         let picViewW = UIScreen.mainScreen().bounds.width - 2 * margin
         let picViewH = row * itemWH + (row - 1) * itemMargin
         return CGSizeMake(picViewW, picViewH)
+    }
+    
+    private func setupLabelUI() {
+        contentLabel.matchTextColor = UIColor(red: 48 / 255.0, green: 51 / 255.0, blue: 112 / 255.0, alpha: 1.0)
+        retweetContentLabel.matchTextColor = UIColor(red: 48 / 255.0, green: 51 / 255.0, blue: 112 / 255.0, alpha: 1.0)
         
+        // 监听@谁谁谁的点击
+        contentLabel.userTapHandler = { (label, user, range) in
+            
+            print(user)
+            print(range)
+        }
         
+        // 监听链接的点击
+        contentLabel.linkTapHandler = { (label, link, range) in
+            
+            print(link)
+            print(range)
+        }
+        
+        // 监听话题的点击
+        contentLabel.topicTapHandler = { (label, topic, range) in
+            
+            print(topic)
+            print(range)
+        }
     }
 }

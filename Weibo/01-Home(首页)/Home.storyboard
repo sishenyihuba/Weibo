@@ -132,25 +132,13 @@
                                                 </mask>
                                             </variation>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天三十晚上闹大年" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhF-kD-W8c" customClass="ActiveLabel" customModule="ActiveLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天三十晚上闹大年" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhF-kD-W8c" customClass="HYLabel" customModule="HYLabel">
                                             <rect key="frame" x="15" y="60" width="135" height="20.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="135" id="ijR-zo-psH"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="mentionColor">
-                                                    <color key="value" red="0.18998533487319946" green="0.35768887400627136" blue="0.43821841478347778" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="hashtagColor">
-                                                    <color key="value" red="0.1899853349" green="0.35768887399999999" blue="0.43821841480000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="URLColor">
-                                                    <color key="value" red="0.1899853349" green="0.35768887399999999" blue="0.43821841480000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNB-Wc-y4N" userLabel="转发微博背景">
                                             <rect key="frame" x="0.0" y="88.5" width="600" height="115.5"/>
@@ -195,7 +183,7 @@
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转发的微博在这里" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkN-nz-lnz" customClass="ActiveLabel" customModule="ActiveLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转发的微博在这里" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkN-nz-lnz" customClass="HYLabel" customModule="HYLabel">
                                             <rect key="frame" x="15" y="96" width="135" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="135" id="5MO-Gf-t9I"/>
@@ -203,17 +191,6 @@
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="mentionColor">
-                                                    <color key="value" red="0.1899853349" green="0.35768887399999999" blue="0.43821841480000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="hashtagColor">
-                                                    <color key="value" red="0.1899853349" green="0.35768887399999999" blue="0.43821841480000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="URLColor">
-                                                    <color key="value" red="0.1899853349" green="0.35768887399999999" blue="0.43821841480000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="5MO-Gf-t9I"/>
@@ -265,7 +242,7 @@
                                 <connections>
                                     <outlet property="avatarImageView" destination="TFj-mh-5eL" id="W8o-ah-Lfo"/>
                                     <outlet property="bottomToolView" destination="4UF-XM-Juk" id="iMx-LF-x65"/>
-                                    <outlet property="contentLabel" destination="qhF-kD-W8c" id="SpV-25-kqB"/>
+                                    <outlet property="contentLabel" destination="qhF-kD-W8c" id="nKP-cj-ikc"/>
                                     <outlet property="contentLabelWidth" destination="ijR-zo-psH" id="4xo-IE-v59"/>
                                     <outlet property="createTimeLabel" destination="IQp-sr-Ulg" id="CfK-tM-bJv"/>
                                     <outlet property="fromLabel" destination="1Sz-VA-2cB" id="2wv-hO-1vj"/>
@@ -274,7 +251,7 @@
                                     <outlet property="picViewBottomCons" destination="Ujh-dp-b3P" id="C9L-Ec-faO"/>
                                     <outlet property="picViewHCons" destination="4qa-tu-cw4" id="8Ic-Qk-M5v"/>
                                     <outlet property="picViewWCons" destination="7WV-Se-ajh" id="ztL-mt-TTJ"/>
-                                    <outlet property="retweetContentLabel" destination="IkN-nz-lnz" id="rP7-8n-3j5"/>
+                                    <outlet property="retweetContentLabel" destination="IkN-nz-lnz" id="DTM-JJ-px5"/>
                                     <outlet property="retweetLabelTopCons" destination="a84-c5-Tsj" id="9fn-J0-J7S"/>
                                     <outlet property="retweetView" destination="XNB-Wc-y4N" id="coG-GP-4hq"/>
                                     <outlet property="verifyImageView" destination="Z4U-wd-s17" id="Ogz-Yq-uaN"/>

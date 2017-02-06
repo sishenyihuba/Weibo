@@ -1,0 +1,6 @@
+framework module HYLabel {
+  umbrella header "HYLabel-umbrella.h"
+
+  export *
+  module * { export * }
+}
