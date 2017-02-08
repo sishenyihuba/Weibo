@@ -116,17 +116,34 @@ extension StatusCell {
             var width = image.size.width
             var height = image.size.height
             
+            //保证一张配图的时候，配图尺寸正常
             if image.size.height >= 200 {
                 height = 200
                 width = height * image.size.width / image.size.height
-                if width >= UIScreen.mainScreen().bounds.width - 2 * margin {
+                if width >= UIScreen.mainScreen().bounds.width - 2 * margin  {
                     width = UIScreen.mainScreen().bounds.width - 2 * margin
+                    height = width * image.size.height / image.size.width
+                    if height >= 200 {
+                        height = 200
+                    }
+                }
+            }
+            
+            if image.size.width >= UIScreen.mainScreen().bounds.width - 2 * margin {
+                width = UIScreen.mainScreen().bounds.width - 2 * margin
+                height = width * image.size.height / image.size.width
+                
+                if height >= 200 {
+                    height = 200
+                    width = height * image.size.width / image.size.height
+                    if width >= UIScreen.mainScreen().bounds.width - 2 * margin  {
+                        width = UIScreen.mainScreen().bounds.width - 2 * margin
+                    }
                 }
             }
             flowLayout.itemSize = CGSizeMake(width,height)
             return CGSizeMake(width, height)
         }
-        
         
         let itemWH = (UIScreen.mainScreen().bounds.width - 2 * margin - 2 * itemMargin) / 3
         flowLayout.itemSize = CGSizeMake(itemWH, itemWH)
