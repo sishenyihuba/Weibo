@@ -113,8 +113,18 @@ extension StatusCell {
         
         if count == 1 {
             let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(viewModel?.picURLs.last?.absoluteString)
-            flowLayout.itemSize = CGSizeMake(image.size.width * 2 , image.size.height * 2)
-            return CGSizeMake(image.size.width * 2 , image.size.height * 2)
+            var width = image.size.width
+            var height = image.size.height
+            
+            if image.size.height >= 200 {
+                height = 200
+                width = height * image.size.width / image.size.height
+                if width >= UIScreen.mainScreen().bounds.width - 2 * margin {
+                    width = UIScreen.mainScreen().bounds.width - 2 * margin
+                }
+            }
+            flowLayout.itemSize = CGSizeMake(width,height)
+            return CGSizeMake(width, height)
         }
         
         

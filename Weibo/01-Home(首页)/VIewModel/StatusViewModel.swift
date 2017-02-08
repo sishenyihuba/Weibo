@@ -64,7 +64,13 @@ class StatusViewModel: NSObject {
                 guard let picUrlString = picDict["thumbnail_pic"] else {
                     continue
                 }
-                picURLs.append(NSURL(string: picUrlString)!)
+                var tempPicUrlString = picUrlString
+                if tempPicUrlString.containsString("thumbnail") {
+                    let  range = tempPicUrlString.rangeOfString("thumbnail")
+                    tempPicUrlString.replaceRange(range!, with: "bmiddle")
+                }
+                
+                picURLs.append(NSURL(string: tempPicUrlString)!)
             }
         }
         

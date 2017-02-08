@@ -37,6 +37,8 @@ class HomeViewController: BaseViewController {
             setupFooterRefresh()
         
             setupTipLabel()
+        
+            setupNotification()
     
         }
     }
@@ -82,6 +84,9 @@ extension HomeViewController {
         
     }
 
+    private func setupNotification() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.picBrowserShowNotiReceive(_:)), name: picBrowserShowNoti, object: nil)
+    }
 }
 
 //MARK: - 点击事件
@@ -95,6 +100,16 @@ extension HomeViewController {
         
         popMenu.showFrom(sender, alignStyle: .Center)
         
+    }
+    
+    @objc private func picBrowserShowNotiReceive(noti :NSNotification) {
+        let info = noti.userInfo!
+        let index = info["index"] as! NSIndexPath
+        let picURLs = info["PicURLs"] as! [NSURL]
+        
+        let picBrowserVc = PhotoBrowserController(index: index, PicUrls: picURLs)
+        
+        presentViewController(picBrowserVc, animated: true, completion: nil)
     }
 }
 

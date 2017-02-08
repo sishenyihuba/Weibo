@@ -14,5 +14,7 @@ let callback_url = "http://www.sina.com.cn"
 let picDidPickNoti = "picDidPickNoti"
 let picDidDeleteNoti = "picDidDeleteNoti"
 
+let picBrowserShowNoti = "picBrowserShowNoti"
+
 
 
