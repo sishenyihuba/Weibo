@@ -8,7 +8,7 @@
 
 import UIKit
 import SnapKit
-
+import SVProgressHUD
 let photoBrowserCell = "photoBrowserCell"
 
 class PhotoBrowserController: UIViewController {
@@ -33,6 +33,12 @@ class PhotoBrowserController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        super.loadView()
+        
+        view.bounds.size.width += 20
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +50,8 @@ class PhotoBrowserController: UIViewController {
         saveButton.addTarget(self, action: #selector(PhotoBrowserController.save), forControlEvents: .TouchUpInside)
         
         setupCollectionView()
+        
+        collectionView.scrollToItemAtIndexPath(index!, atScrollPosition: .Left, animated: false)
     }
 }
 
@@ -71,7 +79,13 @@ extension PhotoBrowserController {
     }
     
     func save() {
+        let cell = collectionView.visibleCells().first as! PhotoBrowserCell
         
+        guard let image = cell.imageView.image else {
+            return
+        }
+        
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(PhotoBrowserController.image(_:didFinishSavingWithError:contextInfo:)),nil)
     }
     
     func setupCollectionView() {
@@ -81,9 +95,20 @@ extension PhotoBrowserController {
         collectionView.pagingEnabled = true
         collectionView.dataSource = self
     }
-    
-    
+
 }
+
+
+extension PhotoBrowserController {
+    @objc private func image(image:UIImage, didFinishSavingWithError error : NSError?, contextInfo: AnyObject) {
+        if error != nil {
+            SVProgressHUD.showInfoWithStatus("保存失败")
+        } else {
+            SVProgressHUD.showInfoWithStatus("保存成功")
+        }
+    }
+}
+
 
 
 extension PhotoBrowserController: UICollectionViewDataSource {
@@ -95,10 +120,18 @@ extension PhotoBrowserController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(photoBrowserCell, forIndexPath: indexPath) as! PhotoBrowserCell
         
         cell.picURL = picURLs![indexPath.item]
-        
+        cell.delegate = self
         return cell
     }
 }
+
+extension PhotoBrowserController : PhotoBrowserCellDelegate {
+    func imageDidTouch() {
+        close()
+    }
+}
+
+
 
 class PhotoBrowserLayout:UICollectionViewFlowLayout {
     override func prepareLayout() {

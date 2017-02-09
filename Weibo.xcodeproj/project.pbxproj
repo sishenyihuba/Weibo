@@ -11,6 +11,7 @@
 		A652152E1E4AFD6B00F4DFD4 /* PhotoBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A652152D1E4AFD6B00F4DFD4 /* PhotoBrowserController.swift */; };
 		A65215301E4B02EB00F4DFD4 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A652152F1E4B02EB00F4DFD4 /* UIButton-Extension.swift */; };
 		A65215321E4B0AAF00F4DFD4 /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65215311E4B0AAF00F4DFD4 /* PhotoBrowserCell.swift */; };
+		A65215341E4C045800F4DFD4 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65215331E4C045800F4DFD4 /* ProgressView.swift */; };
 		A65604D01E38812400F31620 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65604CF1E38812400F31620 /* Status.swift */; };
 		A65604D21E388EBD00F31620 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65604D11E388EBD00F31620 /* NSDate-Extension.swift */; };
 		A65604D41E389A2F00F31620 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65604D31E389A2F00F31620 /* User.swift */; };
@@ -69,6 +70,7 @@
 		A652152D1E4AFD6B00F4DFD4 /* PhotoBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserController.swift; sourceTree = "<group>"; };
 		A652152F1E4B02EB00F4DFD4 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		A65215311E4B0AAF00F4DFD4 /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserCell.swift; sourceTree = "<group>"; };
+		A65215331E4C045800F4DFD4 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		A65604CF1E38812400F31620 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		A65604D11E388EBD00F31620 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		A65604D31E389A2F00F31620 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		A652152C1E4AFD5900F4DFD4 /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				A65215331E4C045800F4DFD4 /* ProgressView.swift */,
 				A652152D1E4AFD6B00F4DFD4 /* PhotoBrowserController.swift */,
 				A65215311E4B0AAF00F4DFD4 /* PhotoBrowserCell.swift */,
 			);
@@ -602,6 +605,7 @@
 				A66609BB1E2390C0000C8897 /* VisitorView.swift in Sources */,
 				A66E570D1E275C7A00F4CDFA /* UserAccount.swift in Sources */,
 				A6DE1ECC1E484D0800CD561D /* EmoticonController.swift in Sources */,
+				A65215341E4C045800F4DFD4 /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
