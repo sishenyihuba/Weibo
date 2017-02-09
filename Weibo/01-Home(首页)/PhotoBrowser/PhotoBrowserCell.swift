@@ -20,7 +20,6 @@ class PhotoBrowserCell: UICollectionViewCell {
             guard let picURL = picURL else {
                 return
             }
-            print(picURL.absoluteString)
             let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(picURL.absoluteString)
             
             let width = scrollView.frame.width
@@ -72,14 +71,14 @@ extension PhotoBrowserCell {
         scrollView.addSubview(imageView)
         
         scrollView.frame = contentView.bounds
-        scrollView.bounds.size.width -= 20
+        scrollView.frame.size.width -= 20
         progressView.bounds = CGRectMake(0, 0, 50, 50)
         progressView.center = CGPointMake(UIScreen.mainScreen().bounds.width * 0.5, UIScreen.mainScreen().bounds.height * 0.5)
         progressView.backgroundColor = UIColor.clearColor()
         progressView.hidden = true
         
         imageView.userInteractionEnabled = true
-        let tap = UIGestureRecognizer(target: self, action: #selector(PhotoBrowserCell.tapImage))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(PhotoBrowserCell.tapImage))
         imageView.addGestureRecognizer(tap)
     }
     

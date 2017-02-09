@@ -36,7 +36,7 @@ class PhotoBrowserController: UIViewController {
     override func loadView() {
         super.loadView()
         
-        view.bounds.size.width += 20
+        view.frame.size.width += 20
     }
     
     override func viewDidLoad() {
@@ -68,7 +68,7 @@ extension PhotoBrowserController {
             make.size.equalTo(CGSizeMake(90, 32))
         }
         saveButton.snp_makeConstraints { (make) in
-            make.right.equalTo(-20)
+            make.right.equalTo(-40)
             make.bottom.equalTo(closeButton.snp_bottom)
             make.size.equalTo(CGSizeMake(90, 32))
         }
@@ -132,6 +132,23 @@ extension PhotoBrowserController : PhotoBrowserCellDelegate {
 }
 
 
+extension PhotoBrowserController : DimissDelegate {
+    func indexPathForDismiss() -> NSIndexPath {
+        let cell = collectionView.visibleCells().first!
+        return collectionView.indexPathForCell(cell)!
+    }
+    
+    func imageView() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.contentMode = .ScaleAspectFill
+        imageView.clipsToBounds = true
+        let cell = collectionView.visibleCells().first! as! PhotoBrowserCell
+        imageView.frame = cell.imageView.frame
+        imageView.image = cell.imageView.image
+        return imageView
+    }
+}
+
 
 class PhotoBrowserLayout:UICollectionViewFlowLayout {
     override func prepareLayout() {
@@ -143,3 +160,6 @@ class PhotoBrowserLayout:UICollectionViewFlowLayout {
         minimumInteritemSpacing = 0
     }
 }
+
+
+

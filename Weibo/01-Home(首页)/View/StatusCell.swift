@@ -52,7 +52,10 @@ class StatusCell: UITableViewCell {
             
             createTimeLabel.text = viewModel.create_at_text
             
-            fromLabel.text = "来自 " + viewModel.sourceText!
+            if let source = viewModel.sourceText {
+                
+                fromLabel.text = "来自 " + source
+            }
             
             contentLabel.attributedText = FindEmoticon.shareIntance.findAttrString(viewModel.status?.text, font: contentLabel.font)
             

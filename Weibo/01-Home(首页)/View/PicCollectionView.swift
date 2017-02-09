@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+
 private let  margin : CGFloat = 15
 private let itemMargin :CGFloat = 10
 class PicCollectionView: UICollectionView {
@@ -43,9 +45,50 @@ extension PicCollectionView : UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let info = ["index" : indexPath , "PicURLs" : picURLs]
-        NSNotificationCenter.defaultCenter().postNotificationName(picBrowserShowNoti, object: nil, userInfo: info)
+        NSNotificationCenter.defaultCenter().postNotificationName(picBrowserShowNoti, object: self, userInfo: info)
     }
 }
+
+
+//MARK: - TransitionDelegate
+
+extension PicCollectionView : TransitionDelegate {
+    func startRect(index: NSIndexPath) -> CGRect {
+        let cell = cellForItemAtIndexPath(index)!
+        let startFrame = convertRect(cell.frame, toCoordinateSpace: UIApplication.sharedApplication().keyWindow!)
+        return startFrame
+    }
+    
+    func endRect(index: NSIndexPath) -> CGRect {
+        let url = picURLs[index.item]
+        let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(url.absoluteString)
+        
+        let width = UIScreen.mainScreen().bounds.width
+        let  height = width * image.size.height / image.size.width
+        var y :CGFloat = 0
+        if height >= UIScreen.mainScreen().bounds.height {
+            y = 0
+        } else {
+            y = (UIScreen.mainScreen().bounds.height - height) * 0.5
+        }
+        
+        return CGRectMake(0, y, width, height)
+    }
+    
+    func imageView(index: NSIndexPath) -> UIImageView {
+        let imageView = UIImageView()
+        let url = picURLs[index.item]
+        let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(url.absoluteString)
+        imageView.image = image
+        imageView.contentMode = .ScaleAspectFill
+        imageView.clipsToBounds = true
+
+        
+        return imageView
+    }
+}
+
+
 
 
 class PicCell : UICollectionViewCell {

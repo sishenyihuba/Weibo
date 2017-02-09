@@ -17,6 +17,7 @@ class HomeViewController: BaseViewController {
     private lazy var popMenuArray = ["iOS", "WatchOS","SiriKit","NotificationFW"]
     private lazy var viewModels :[StatusViewModel] = [StatusViewModel]()
     private lazy var tipLabel : UILabel = UILabel()
+    private lazy var transition : PhotoBrowserTransition = PhotoBrowserTransition()
     
     override func viewDidLoad() {
             super.viewDidLoad()
@@ -106,12 +107,19 @@ extension HomeViewController {
         let info = noti.userInfo!
         let index = info["index"] as! NSIndexPath
         let picURLs = info["PicURLs"] as! [NSURL]
-        
+        let picCollectionView = noti.object as! PicCollectionView
         let picBrowserVc = PhotoBrowserController(index: index, PicUrls: picURLs)
         
+        picBrowserVc.modalPresentationStyle = .Custom
+        picBrowserVc.transitioningDelegate = transition
+        transition.presentedDelegate = picCollectionView
+        transition.index = index
+        transition.dimissDelegate = picBrowserVc
         presentViewController(picBrowserVc, animated: true, completion: nil)
     }
 }
+
+
 
 //MARK: - 点击TitleButton PopMenu的代理
 extension HomeViewController : ZWCustomPopViewDelegate {
